@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LEAN Value-flow App — Observe, capture and improve your processes">
+  <title>LEAN APP — Value Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⬡</span> LEAN<span>APP</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#screens">RSV</a></li>
+        <li><a href="#why-lean">Why Lean</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact" class="btn-nav">Get Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Now Available on iOS &amp; Android</div>
+      <h1>Transform Your Process<br><span>with Lean Thinking</span></h1>
+      <p class="hero-sub">Walk through process components, unravel hidden inefficiencies, and build a culture of continuous improvement — right from your phone.</p>
+      <div class="hero-cta">
+        <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" class="btn-store" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-store" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.99.13l12.12-6.99-2.54-2.54-10.57 9.4zM.53 1.56C.2 1.9 0 2.42 0 3.1v17.8c0 .68.2 1.2.54 1.53l.08.08 9.97-9.97v-.24L.61 1.48l-.08.08zM20.12 10.55l-2.55-1.47-2.85 2.85 2.85 2.85 2.56-1.48c.73-.42.73-1.33-.01-1.75zM3.18.24l12.11 6.99-2.54 2.54L2.18.37A1.08 1.08 0 013.18.24z"/></svg>
+          Google Play
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>4.8★</span><small>App Rating</small></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span>iOS &amp; Android</span><small>Cross Platform</small></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span>Free Trial</span><small>30 Days</small></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============ OBSERVE SECTION ============ -->
+  <section class="section observe-section" id="observe">
+    <div class="container two-col">
+      <div class="col-img fade-in">
+        <div class="img-card">
+          <div class="img-placeholder observe-img">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="app-bar green"></div>
+                <div class="app-row"><div class="app-dot green"></div><div class="app-line"></div></div>
+                <div class="app-row"><div class="app-dot amber"></div><div class="app-line short"></div></div>
+                <div class="app-row"><div class="app-dot red"></div><div class="app-line"></div></div>
+                <div class="app-row"><div class="app-dot green"></div><div class="app-line short"></div></div>
+                <div class="app-row"><div class="app-dot green"></div><div class="app-line"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-text fade-in">
+        <div class="section-tag">Observe &amp; Capture</div>
+        <h2>See What Others Miss</h2>
+        <p>Walk through your process components and unravel what's truly happening. Discover hidden elements that are usually taken for granted, despite causing excruciating process pain.</p>
+        <ul class="check-list">
+          <li>Value-added moments in a process</li>
+          <li>What stalls the continuation of an activity</li>
+          <li>Choking situations in the free flow</li>
+          <li>Seamless spread of activities</li>
+          <li>Easy-to-capture unsafe moments</li>
+          <li>Unbiased process capture through comparisons</li>
+          <li>Historical process shift observation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RSV / SCREENSHOTS ============ -->
+  <section class="section screens-section bg-dark-section" id="screens">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag light">RSV — Right Simple Visuals</div>
+        <h2>Words are good. Visuals are better.</h2>
+        <p>Our RSV approach triggers an instant response. Simple, ever-enlarging infographics connect process reality right before your eyes.</p>
+      </div>
+      <div class="screens-grid">
+        <div class="screen-card">
+          <div class="screen-img s1">
+            <div class="screen-label">Value Analysis</div>
+          </div>
+        </div>
+        <div class="screen-card">
+          <div class="screen-img s2">
+            <div class="screen-label">Process Flow</div>
+          </div>
+        </div>
+        <div class="screen-card featured">
+          <div class="screen-img s3">
+            <div class="screen-label">Live Dashboard</div>
+          </div>
+        </div>
+        <div class="screen-card">
+          <div class="screen-img s4">
+            <div class="screen-label">Compare Mode</div>
+          </div>
+        </div>
+        <div class="screen-card">
+          <div class="screen-img s5">
+            <div class="screen-label">Safety Checks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY LEAN ============ -->
+  <section class="section why-section" id="why-lean">
+    <div class="container two-col reverse">
+      <div class="col-text fade-in">
+        <div class="section-tag">Why Lean</div>
+        <h2>Available on All Your Devices</h2>
+        <p>Wherever you go, Lean App shapes the fabric of your process by truly observing and highlighting it — with visuals, audio, and video capture, all in your hands.</p>
+        <p>Define the strength of your assembly or business process through detailed analysis and work on corrective steps immediately.</p>
+        <p><strong>PROJECT</strong> connects all team members and shows completion status from anywhere, any time. You do, you say, you are seen — no meetings needed.</p>
+        <div class="device-icons">
+          <div class="device-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+            <span>iPhone &amp; Android</span>
+          </div>
+          <div class="device-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+            <span>iPad &amp; Tablet</span>
+          </div>
+        </div>
+        <div class="hero-cta" style="margin-top:2rem;">
+          <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" class="btn-primary" target="_blank">Download Free</a>
+          <a href="https://www.youtube.com/watch?v=vdCMFpDziN8" class="btn-outline" target="_blank">Watch Demo ▶</a>
+        </div>
+      </div>
+      <div class="col-img fade-in">
+        <div class="img-card purple-card">
+          <div class="devices-visual">
+            <div class="tablet-mock">
+              <div class="tablet-screen">
+                <div class="app-bar purple"></div>
+                <div class="chart-bars">
+                  <div class="bar" style="height:60%"></div>
+                  <div class="bar" style="height:80%"></div>
+                  <div class="bar highlight" style="height:100%"></div>
+                  <div class="bar" style="height:45%"></div>
+                  <div class="bar" style="height:70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section features-section bg-light-section" id="features">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">Features</div>
+        <h2>Everything in This App</h2>
+        <p>As a project lead for every collaborative work — big or small — empower your team with the PROJECT module.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>Free Trial</h4>
+          <p>Get started with no cost for 30 days. Explore all core features before committing.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon blue">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          </div>
+          <h4>Custom Modules</h4>
+          <p>Tailor the observation framework to match your exact industry and process type.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h4>Team Projects</h4>
+          <p>Connect all members, assign tasks, and see real-time status updates from anywhere.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          </div>
+          <h4>Ergonomic Insights</h4>
+          <p>Identify ergonomic risks and unsafe observations with photo and video capture.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon teal">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h4>Live Analytics</h4>
+          <p>Track value-added vs non-value-added ratios with instant visual dashboards.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon red">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Fast Support</h4>
+          <p>Our team responds quickly to any technical issues so you never miss a beat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">Pricing</div>
+        <h2>Move Ahead with Hands On</h2>
+        <p>Choose the plan that fits your observation schedule. All plans include core Lean modules.</p>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="plan-badge">Free</div>
+          <div class="plan-price"><sup>$</sup>0<small>/30 days</small></div>
+          <ul class="plan-features">
+            <li class="yes">Image capture</li>
+            <li class="no">Video capture</li>
+            <li class="no">Extended video</li>
+            <li class="yes">Value analysis</li>
+            <li class="yes">Unsafe observation</li>
+            <li class="no">User section</li>
+            <li class="yes">Compare</li>
+            <li class="yes">Projects</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan outline" target="_blank">Start Free</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="plan-badge silver">Silver</div>
+          <div class="plan-price"><sup>$</sup>10<small>/30 days</small></div>
+          <ul class="plan-features">
+            <li class="yes">Image capture</li>
+            <li class="no">Video capture</li>
+            <li class="no">Extended video</li>
+            <li class="yes">Value analysis</li>
+            <li class="yes">Unsafe observation</li>
+            <li class="yes">User section</li>
+            <li class="yes">Compare</li>
+            <li class="yes">Projects</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan" target="_blank">Get Silver</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="popular-tag">Most Popular</div>
+          <div class="plan-badge gold">Gold</div>
+          <div class="plan-price"><sup>$</sup>18<small>/60 days</small></div>
+          <ul class="plan-features">
+            <li class="yes">Image capture</li>
+            <li class="yes">Video capture</li>
+            <li class="no">Extended video</li>
+            <li class="yes">Value analysis</li>
+            <li class="yes">Unsafe observation</li>
+            <li class="yes">User section</li>
+            <li class="yes">Compare</li>
+            <li class="yes">Projects</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan" target="_blank">Get Gold</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="plan-badge platinum">Platinum</div>
+          <div class="plan-price"><sup>$</sup>24<small>/90 days</small></div>
+          <ul class="plan-features">
+            <li class="yes">Image capture</li>
+            <li class="yes">Video capture</li>
+            <li class="yes">Extended video</li>
+            <li class="yes">Value analysis</li>
+            <li class="yes">Unsafe observation</li>
+            <li class="yes">User section</li>
+            <li class="yes">Compare</li>
+            <li class="yes">Projects</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan" target="_blank">Get Platinum</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="plan-badge monthly">Monthly</div>
+          <div class="plan-price"><sup>$</sup>8<small>/month</small></div>
+          <ul class="plan-features">
+            <li class="yes">Image capture</li>
+            <li class="yes">Video capture</li>
+            <li class="yes">Extended video</li>
+            <li class="yes">Value analysis</li>
+            <li class="yes">Unsafe observation</li>
+            <li class="yes">User section</li>
+            <li class="yes">Compare</li>
+            <li class="yes">Projects</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan" target="_blank">Subscribe</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about-section bg-dark-section" id="about">
+    <div class="container two-col">
+      <div class="col-text fade-in">
+        <div class="section-tag light">About Us</div>
+        <h2 style="color:#fff;">Built by Process Thinkers</h2>
+        <p style="color:rgba(255,255,255,0.75);">Value-flow Sweden is a consultancy company that develops apps for a more efficient industry. Our mission is that our customers see their opportunities to improve.</p>
+        <blockquote>
+          "Contrary to what many consulting companies do, we do not want to talk about what you should do — we want to help you do it. We develop apps that use modern technology to help our customers achieve their goals."
+        </blockquote>
+        <p style="color:rgba(255,255,255,0.55); font-size:0.9rem;">Founded 2017 — value-flow.se</p>
+      </div>
+      <div class="col-img fade-in">
+        <div class="about-visual">
+          <div class="value-circle">
+            <div class="vc-ring"></div>
+            <div class="vc-center">
+              <div class="vc-label">Value<br>Flow</div>
+            </div>
+            <div class="vc-item top">Observe</div>
+            <div class="vc-item right">Capture</div>
+            <div class="vc-item bottom">Improve</div>
+            <div class="vc-item left">Measure</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact-section bg-light-section" id="contact">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">Support</div>
+        <h2>Looking for Help?</h2>
+        <p>Got a question? Send us a message and we'll respond as soon as possible.</p>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" name="contactform" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">This question is about…</label>
+            <select id="subject" name="subject">
+              <option value="">Select a topic</option>
+              <option>Registering / Authorising</option>
+              <option>Using the Application</option>
+              <option>Billing &amp; Plans</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe your question or issue…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter-section">
+    <div class="container newsletter-inner">
+      <div>
+        <h3>Stay up to date with our news &amp; updates</h3>
+        <p>New features, lean tips, and product announcements — straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" novalidate>
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⬡</span> LEAN<span>APP</span>
+        <p>Walks through process components &amp; transforms them into efficient processes.</p>
+        <p class="footer-copy">© 2024 <a href="https://value-flow.se" target="_blank">value-flow.se</a> — All Rights Reserved</p>
+      </div>
+      <div class="footer-links-group">
+        <h5>Product</h5>
+        <a href="#screens">RSV Visuals</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div class="footer-links-group">
+        <h5>Company</h5>
+        <a href="#about">About Us</a>
+        <a href="#contact">Support</a>
+        <a href="https://leanadmin.valuestream.se/site/termsandconditions?cont=privacy" target="_blank">Privacy Policy</a>
+        <a href="https://leanadmin.valuestream.se/site/termsandconditions?cont=terms" target="_blank">Terms of Use</a>
+      </div>
+      <div class="footer-links-group">
+        <h5>Download</h5>
+        <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank">Google Play</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
