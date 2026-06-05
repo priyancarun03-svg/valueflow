@@ -7,886 +7,7 @@
   <title>LEAN APP — Value Flow</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-/* ========================================
-   LEAN APP — Modern Redesign
-   style.css
-======================================== */
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --green:       #1a9e6e;
-  --green-light: #e6f7f1;
-  --green-dark:  #0f6e50;
-  --dark:        #0d1117;
-  --dark-2:      #161b22;
-  --dark-3:      #1c2432;
-  --text:        #1a1a2e;
-  --text-muted:  #6b7280;
-  --text-light:  #9ca3af;
-  --surface:     #ffffff;
-  --bg-light:    #f8fafb;
-  --border:      #e5e7eb;
-  --radius:      12px;
-  --radius-lg:   20px;
-  --shadow:      0 4px 24px rgba(0,0,0,0.08);
-  --shadow-lg:   0 12px 48px rgba(0,0,0,0.14);
-  --transition:  0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-html { scroll-behavior: smooth; font-size: 16px; }
-
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: var(--text);
-  background: var(--surface);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-
-/* ---- CONTAINER ---- */
-.container {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ---- NAVBAR ---- */
-.navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 0 0;
-  transition: background var(--transition), box-shadow var(--transition);
-}
-.navbar.scrolled {
-  background: rgba(13,17,23,0.95);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.08);
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-}
-.nav-logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.nav-logo span { color: var(--green); }
-.logo-icon { font-size: 1.6rem; line-height: 1; color: var(--green); }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  list-style: none;
-}
-.nav-links a {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: color var(--transition), background var(--transition);
-}
-.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.08); }
-.btn-nav {
-  color: #fff !important;
-  background: var(--green) !important;
-  padding: 8px 18px !important;
-  border-radius: 8px !important;
-}
-.btn-nav:hover { background: var(--green-dark) !important; }
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-.nav-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #fff;
-  border-radius: 2px;
-  transition: var(--transition);
-}
-
-/* ---- HERO ---- */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, #1a2e40 0%, transparent 70%),
-    linear-gradient(135deg, #0d1117 0%, #0f1d2b 40%, #0d2318 100%);
-}
-/* Animated grid lines */
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(26,158,110,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26,158,110,0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 50% 60% at 30% 50%, rgba(26,158,110,0.12) 0%, transparent 70%);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  padding-top: 120px;
-  padding-bottom: 80px;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(26,158,110,0.15);
-  border: 1px solid rgba(26,158,110,0.3);
-  color: #4ade9e;
-  font-size: 0.8rem;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 100px;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.3px;
-}
-.hero-badge::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: #4ade9e;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #4ade9e;
-}
-.hero h1 {
-  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  margin-bottom: 1.25rem;
-}
-.hero h1 span { color: var(--green); }
-.hero-sub {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.65);
-  max-width: 560px;
-  margin-bottom: 2.5rem;
-  line-height: 1.75;
-}
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 3rem;
-}
-.btn-store {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 12px 22px;
-  border-radius: var(--radius);
-  transition: var(--transition);
-}
-.btn-store:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.3);
-  transform: translateY(-1px);
-}
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.stat span {
-  display: block;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-}
-.stat small {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.stat-div {
-  width: 1px;
-  height: 32px;
-  background: rgba(255,255,255,0.12);
-}
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.35);
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
-}
-.scroll-arrow {
-  width: 20px; height: 20px;
-  border-right: 2px solid rgba(255,255,255,0.25);
-  border-bottom: 2px solid rgba(255,255,255,0.25);
-  transform: rotate(45deg);
-  animation: bounce 1.8s infinite;
-}
-@keyframes bounce {
-  0%,100% { transform: rotate(45deg) translateY(0); }
-  50% { transform: rotate(45deg) translateY(4px); }
-}
-
-/* ---- SECTIONS ---- */
-.section { padding: 100px 0; }
-.bg-light-section { background: var(--bg-light); }
-.bg-dark-section { background: var(--dark); }
-
-.section-header { margin-bottom: 3.5rem; }
-.section-header.center { text-align: center; }
-.section-header p { font-size: 1rem; color: var(--text-muted); max-width: 560px; margin: 0 auto; }
-
-.section-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--green);
-  background: var(--green-light);
-  padding: 5px 12px;
-  border-radius: 100px;
-  margin-bottom: 1rem;
-}
-.section-tag.light {
-  color: #4ade9e;
-  background: rgba(26,158,110,0.15);
-  border: 1px solid rgba(26,158,110,0.2);
-}
-h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-/* ---- TWO COL LAYOUT ---- */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.two-col.reverse { direction: rtl; }
-.two-col.reverse > * { direction: ltr; }
-.col-text p { color: var(--text-muted); margin-bottom: 1rem; }
-
-/* ---- CHECK LIST ---- */
-.check-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 1.5rem;
-}
-.check-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.95rem;
-  color: var(--text);
-}
-.check-list li::before {
-  content: '✓';
-  flex-shrink: 0;
-  width: 20px; height: 20px;
-  background: var(--green-light);
-  color: var(--green-dark);
-  font-size: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-top: 2px;
-}
-
-/* ---- IMG CARDS / MOCKUPS ---- */
-.img-card {
-  background: var(--bg-light);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  padding: 32px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.purple-card { background: linear-gradient(135deg, #1a1040 0%, #0d1a30 100%); border-color: rgba(255,255,255,0.06); }
-
-.phone-mockup {
-  width: 160px; height: 280px;
-  background: #1a1a2e;
-  border-radius: 24px;
-  border: 4px solid #2d2d4e;
-  overflow: hidden;
-  padding: 16px 12px;
-}
-.phone-screen { height: 100%; }
-.app-bar {
-  height: 8px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-}
-.app-bar.green { background: var(--green); }
-.app-bar.purple { background: #7c3aed; }
-.app-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.app-dot {
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.app-dot.green { background: var(--green); }
-.app-dot.amber { background: #f59e0b; }
-.app-dot.red { background: #ef4444; }
-.app-line {
-  height: 8px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
-  flex: 1;
-}
-.app-line.short { max-width: 70%; }
-
-.devices-visual { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
-.tablet-mock {
-  width: 200px; height: 260px;
-  background: #0a0f1e;
-  border-radius: 16px;
-  border: 3px solid rgba(255,255,255,0.08);
-  padding: 16px;
-  overflow: hidden;
-}
-.tablet-screen { height: 100%; display: flex; flex-direction: column; }
-.chart-bars {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  padding-top: 20px;
-}
-.bar {
-  flex: 1;
-  background: rgba(124,58,237,0.4);
-  border-radius: 4px 4px 0 0;
-  transition: height 0.5s;
-}
-.bar.highlight { background: #7c3aed; }
-
-.device-icons {
-  display: flex;
-  gap: 16px;
-  margin-top: 1.5rem;
-}
-.device-badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--bg-light);
-  border: 1px solid var(--border);
-  padding: 10px 16px;
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  background: var(--green);
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  transition: var(--transition);
-}
-.btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  transition: var(--transition);
-}
-.btn-outline:hover { background: var(--bg-light); }
-
-/* ---- SCREENS GRID ---- */
-.screens-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  align-items: center;
-}
-.screen-card {
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform var(--transition);
-}
-.screen-card:hover { transform: translateY(-4px); }
-.screen-card.featured { transform: scale(1.08); }
-.screen-card.featured:hover { transform: scale(1.1) translateY(-4px); }
-.screen-img {
-  aspect-ratio: 9/16;
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-  position: relative;
-}
-.s1 { background: linear-gradient(180deg, #0f2d1f 0%, #1a9e6e 100%); }
-.s2 { background: linear-gradient(180deg, #1a1040 0%, #7c3aed 100%); }
-.s3 { background: linear-gradient(180deg, #0d1a30 0%, #2563eb 100%); }
-.s4 { background: linear-gradient(180deg, #2d1a00 0%, #d97706 100%); }
-.s5 { background: linear-gradient(180deg, #1a0d0d 0%, #ef4444 100%); }
-.screen-label {
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 100px;
-  backdrop-filter: blur(8px);
-  width: 100%;
-  text-align: center;
-}
-
-/* ---- FEATURES ---- */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.feature-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: var(--transition);
-}
-.feature-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-  border-color: transparent;
-}
-.feature-icon {
-  width: 52px; height: 52px;
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-.feature-icon.green { background: var(--green-light); color: var(--green-dark); }
-.feature-icon.blue  { background: #dbeafe; color: #1d4ed8; }
-.feature-icon.purple{ background: #ede9fe; color: #6d28d9; }
-.feature-icon.amber { background: #fef3c7; color: #b45309; }
-.feature-icon.teal  { background: #ccfbf1; color: #0f766e; }
-.feature-icon.red   { background: #fee2e2; color: #b91c1c; }
-.feature-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-.feature-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-
-/* ---- PRICING ---- */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  align-items: start;
-}
-.pricing-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  position: relative;
-  transition: var(--transition);
-}
-.pricing-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-.pricing-card.featured {
-  border: 2px solid var(--green);
-  box-shadow: 0 0 0 4px rgba(26,158,110,0.1);
-}
-.popular-tag {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--green);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.plan-badge {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-.plan-badge.silver { color: #6b7280; }
-.plan-badge.gold   { color: #b45309; }
-.plan-badge.platinum { color: #6d28d9; }
-.plan-badge.monthly { color: #0f766e; }
-.plan-price {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 1.25rem;
-  line-height: 1;
-}
-.plan-price sup { font-size: 1rem; vertical-align: top; margin-top: 4px; }
-.plan-price small { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
-.plan-features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 1.5rem;
-  font-size: 0.82rem;
-}
-.plan-features li { display: flex; align-items: center; gap: 8px; }
-.plan-features li.yes { color: var(--text); }
-.plan-features li.no  { color: var(--text-light); }
-.plan-features li.yes::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 0.75rem; }
-.plan-features li.no::before  { content: '×'; color: var(--border); font-weight: 700; }
-.btn-plan {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  font-weight: 600;
-  background: var(--green);
-  color: #fff;
-  transition: var(--transition);
-}
-.btn-plan:hover { background: var(--green-dark); }
-.btn-plan.outline {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-.btn-plan.outline:hover { background: var(--bg-light); }
-
-/* ---- ABOUT ---- */
-.about-section h2 { color: #fff; }
-blockquote {
-  border-left: 3px solid var(--green);
-  padding: 16px 20px;
-  margin: 1.5rem 0;
-  background: rgba(26,158,110,0.08);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  color: rgba(255,255,255,0.8);
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-.about-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-}
-.value-circle {
-  position: relative;
-  width: 280px; height: 280px;
-}
-.vc-ring {
-  width: 100%; height: 100%;
-  border-radius: 50%;
-  border: 2px solid rgba(26,158,110,0.3);
-  position: absolute;
-}
-.vc-ring::before {
-  content: '';
-  position: absolute;
-  inset: 20px;
-  border-radius: 50%;
-  border: 1px solid rgba(26,158,110,0.15);
-}
-.vc-center {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90px; height: 90px;
-  background: var(--green);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.vc-label {
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.3;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.vc-item {
-  position: absolute;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  background: rgba(26,158,110,0.15);
-  border: 1px solid rgba(26,158,110,0.25);
-  padding: 6px 14px;
-  border-radius: 100px;
-}
-.vc-item.top    { top: 4px; left: 50%; transform: translateX(-50%); }
-.vc-item.right  { right: 0; top: 50%; transform: translateY(-50%); }
-.vc-item.bottom { bottom: 4px; left: 50%; transform: translateX(-50%); }
-.vc-item.left   { left: 0; top: 50%; transform: translateY(-50%); }
-
-/* ---- CONTACT ---- */
-.contact-form-wrap {
-  max-width: 680px;
-  margin: 0 auto;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow);
-}
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.form-group { margin-bottom: 20px; }
-.form-group label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  font-size: 0.9rem;
-  font-family: inherit;
-  color: var(--text);
-  background: var(--surface);
-  transition: border-color var(--transition);
-  outline: none;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(26,158,110,0.1);
-}
-.btn-submit {
-  width: 100%;
-  padding: 13px;
-  background: var(--green);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: inherit;
-  transition: var(--transition);
-}
-.btn-submit:hover { background: var(--green-dark); }
-
-/* ---- NEWSLETTER ---- */
-.newsletter-section {
-  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
-  padding: 60px 0;
-}
-.newsletter-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-.newsletter-inner h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-.newsletter-inner p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
-.newsletter-form {
-  display: flex;
-  gap: 8px;
-  flex-shrink: 0;
-}
-.newsletter-form input {
-  padding: 11px 16px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  font-size: 0.9rem;
-  font-family: inherit;
-  width: 280px;
-  outline: none;
-}
-.newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
-.newsletter-form input:focus { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.15); }
-.newsletter-form button {
-  padding: 11px 20px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: var(--radius);
-  cursor: pointer;
-  font-family: inherit;
-  white-space: nowrap;
-  transition: var(--transition);
-}
-.newsletter-form button:hover { background: rgba(255,255,255,0.25); }
-
-/* ---- FOOTER ---- */
-.footer {
-  background: var(--dark);
-  padding: 64px 0 32px;
-}
-.footer-inner {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-.footer-brand .nav-logo {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  display: inline-flex;
-}
-.footer-brand p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.7;
-  max-width: 280px;
-}
-.footer-copy {
-  margin-top: 1.5rem !important;
-  font-size: 0.8rem !important;
-  color: rgba(255,255,255,0.3) !important;
-}
-.footer-copy a { color: rgba(255,255,255,0.5); transition: color var(--transition); }
-.footer-copy a:hover { color: var(--green); }
-.footer-links-group h5 {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 1rem;
-}
-.footer-links-group a {
-  display: block;
-  font-size: 0.87rem;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 8px;
-  transition: color var(--transition);
-}
-.footer-links-group a:hover { color: #fff; }
-
-/* ---- FADE IN ---- */
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade-in.visible { opacity: 1; transform: none; }
-
-/* ---- RESPONSIVE ---- */
-@media (max-width: 1024px) {
-  .pricing-grid { grid-template-columns: repeat(3, 1fr); }
-  .screens-grid { grid-template-columns: repeat(3, 1fr); }
-  .screens-grid .screen-card:nth-child(4),
-  .screens-grid .screen-card:nth-child(5) { display: none; }
-}
-@media (max-width: 768px) {
-  .two-col, .two-col.reverse { grid-template-columns: 1fr; gap: 40px; direction: ltr; }
-  .features-grid { grid-template-columns: 1fr 1fr; }
-  .pricing-grid { grid-template-columns: 1fr 1fr; }
-  .screens-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-  .newsletter-inner { flex-direction: column; text-align: center; }
-  .newsletter-form { width: 100%; }
-  .newsletter-form input { width: 100%; }
-  .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(13,17,23,0.98); padding: 16px 24px 24px; gap: 4px; }
-  .nav-links.open { display: flex; }
-  .nav-toggle { display: flex; }
-  .form-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .features-grid { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .screens-grid { grid-template-columns: 1fr 1fr; }
-  .footer-inner { grid-template-columns: 1fr; }
-  .section { padding: 64px 0; }
-  .contact-form-wrap { padding: 24px; }
-}
-
-</style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -918,9 +39,7 @@ blockquote {
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <!-- SVG animated background art -->
       <svg class="hero-svg-bg" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Grid lines -->
         <defs>
           <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
             <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(26,158,110,0.07)" stroke-width="1"/>
@@ -937,24 +56,20 @@ blockquote {
         <rect width="1200" height="700" fill="url(#grid)"/>
         <ellipse cx="300" cy="350" rx="400" ry="300" fill="url(#glow1)"/>
         <ellipse cx="900" cy="200" rx="300" ry="220" fill="url(#glow2)"/>
-        <!-- Floating hexagons -->
-        <polygon points="80,120 110,103 140,120 140,155 110,172 80,155" fill="none" stroke="rgba(26,158,110,0.2)" stroke-width="1.5" class="hex-float-1"/>
-        <polygon points="1050,80 1075,66 1100,80 1100,108 1075,122 1050,108" fill="none" stroke="rgba(26,158,110,0.15)" stroke-width="1" class="hex-float-2"/>
-        <polygon points="950,500 985,480 1020,500 1020,540 985,560 950,540" fill="rgba(26,158,110,0.05)" stroke="rgba(26,158,110,0.2)" stroke-width="1" class="hex-float-3"/>
-        <polygon points="180,580 205,566 230,580 230,608 205,622 180,608" fill="none" stroke="rgba(37,99,235,0.2)" stroke-width="1" class="hex-float-1"/>
-        <!-- Connecting lines -->
+        <polygon points="80,120 110,103 140,120 140,155 110,172 80,155" fill="none" stroke="rgba(26,158,110,0.2)" stroke-width="1.5"/>
+        <polygon points="1050,80 1075,66 1100,80 1100,108 1075,122 1050,108" fill="none" stroke="rgba(26,158,110,0.15)" stroke-width="1"/>
+        <polygon points="950,500 985,480 1020,500 1020,540 985,560 950,540" fill="rgba(26,158,110,0.05)" stroke="rgba(26,158,110,0.2)" stroke-width="1"/>
+        <polygon points="180,580 205,566 230,580 230,608 205,622 180,608" fill="none" stroke="rgba(37,99,235,0.2)" stroke-width="1"/>
         <line x1="110" y1="137" x2="300" y2="350" stroke="rgba(26,158,110,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
         <line x1="985" y1="94" x2="700" y2="250" stroke="rgba(37,99,235,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
-        <!-- Dots -->
-        <circle cx="600" cy="120" r="3" fill="rgba(26,158,110,0.4)" class="pulse-dot"/>
-        <circle cx="200" cy="300" r="2" fill="rgba(37,99,235,0.4)" class="pulse-dot-2"/>
-        <circle cx="1000" cy="400" r="2.5" fill="rgba(26,158,110,0.35)" class="pulse-dot"/>
+        <circle cx="600" cy="120" r="3" fill="rgba(26,158,110,0.4)"/>
+        <circle cx="200" cy="300" r="2" fill="rgba(37,99,235,0.4)"/>
+        <circle cx="1000" cy="400" r="2.5" fill="rgba(26,158,110,0.35)"/>
       </svg>
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-badge">
-        <span class="badge-dot"></span>
         Now Available on iOS &amp; Android
       </div>
       <h1>Transform Your Process<br><span>with Lean Thinking</span></h1>
@@ -985,7 +100,7 @@ blockquote {
         <div class="hp-notch"></div>
         <div class="hp-screen">
           <div class="hp-topbar">
-            <span class="hp-dot red"></span>
+            <span class="hp-dot"></span>
             <span class="hp-appname">Value Lean</span>
           </div>
           <div class="hp-card green-card">
@@ -1006,7 +121,6 @@ blockquote {
           <div class="hp-mini-chart">
             <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
               <polyline points="0,40 20,32 40,28 60,20 80,16 100,10 120,6" fill="none" stroke="#1a9e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="0,40 20,32 40,28 60,20 80,16 100,10 120,6" fill="rgba(26,158,110,0.1)" stroke="none"/>
               <polygon points="0,40 20,32 40,28 60,20 80,16 100,10 120,6 120,50 0,50" fill="rgba(26,158,110,0.08)"/>
             </svg>
           </div>
@@ -1017,9 +131,8 @@ blockquote {
           </div>
         </div>
       </div>
-      <!-- Floating badges around phone -->
       <div class="float-badge fb1">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="#1a9e6e"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="#1a9e6e" stroke-width="2.5"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         Process Captured
       </div>
       <div class="float-badge fb2">
@@ -1042,59 +155,49 @@ blockquote {
     <div class="container two-col">
       <div class="col-img fade-in">
         <div class="observe-visual">
-          <!-- Process flow SVG illustration -->
           <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" class="observe-svg">
             <defs>
               <filter id="soft-shadow">
                 <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.12)"/>
               </filter>
             </defs>
-            <!-- Background card -->
             <rect x="10" y="10" width="400" height="360" rx="16" fill="#ffffff" filter="url(#soft-shadow)"/>
             <rect x="10" y="10" width="400" height="48" rx="16" fill="#f8fafb"/>
             <rect x="10" y="42" width="400" height="16" fill="#f8fafb"/>
-            <!-- Header dots -->
             <circle cx="34" cy="34" r="6" fill="#ef4444"/>
             <circle cx="54" cy="34" r="6" fill="#f59e0b"/>
             <circle cx="74" cy="34" r="6" fill="#22c55e"/>
             <text x="180" y="39" font-family="Inter,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="500">Process Observer</text>
-            <!-- Step boxes -->
-            <!-- Step 1: Value Added -->
             <rect x="30" y="80" width="160" height="64" rx="10" fill="#e6f7f1"/>
             <rect x="30" y="80" width="5" height="64" rx="3" fill="#1a9e6e"/>
             <text x="46" y="100" font-family="Inter,sans-serif" font-size="10" fill="#0f6e50" font-weight="600">VALUE ADDED</text>
             <text x="46" y="116" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Assembly step — 4 min</text>
             <rect x="46" y="124" width="80" height="7" rx="3" fill="#1a9e6e" opacity="0.4"/>
             <rect x="46" y="124" width="58" height="7" rx="3" fill="#1a9e6e"/>
-            <!-- Step 2: Non-Value -->
             <rect x="30" y="158" width="160" height="64" rx="10" fill="#fef3c7"/>
             <rect x="30" y="158" width="5" height="64" rx="3" fill="#f59e0b"/>
             <text x="46" y="178" font-family="Inter,sans-serif" font-size="10" fill="#b45309" font-weight="600">NON-VALUE</text>
             <text x="46" y="194" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Waiting — 12 min</text>
             <rect x="46" y="202" width="80" height="7" rx="3" fill="#f59e0b" opacity="0.4"/>
             <rect x="46" y="202" width="24" height="7" rx="3" fill="#f59e0b"/>
-            <!-- Step 3: Unsafe -->
             <rect x="30" y="236" width="160" height="64" rx="10" fill="#fee2e2"/>
             <rect x="30" y="236" width="5" height="64" rx="3" fill="#ef4444"/>
             <text x="46" y="256" font-family="Inter,sans-serif" font-size="10" fill="#b91c1c" font-weight="600">UNSAFE OBS.</text>
             <text x="46" y="272" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Near miss detected</text>
             <rect x="46" y="280" width="80" height="7" rx="3" fill="#ef4444" opacity="0.3"/>
             <rect x="46" y="280" width="12" height="7" rx="3" fill="#ef4444"/>
-            <!-- Right side: summary donut -->
             <circle cx="310" cy="170" r="70" fill="none" stroke="#e5e7eb" stroke-width="20"/>
             <circle cx="310" cy="170" r="70" fill="none" stroke="#1a9e6e" stroke-width="20" stroke-dasharray="264 176" stroke-dashoffset="66" stroke-linecap="round"/>
             <circle cx="310" cy="170" r="70" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="88 352" stroke-dashoffset="-198" stroke-linecap="round"/>
             <circle cx="310" cy="170" r="70" fill="none" stroke="#ef4444" stroke-width="20" stroke-dasharray="44 396" stroke-dashoffset="-286" stroke-linecap="round"/>
             <text x="310" y="163" font-family="Inter,sans-serif" font-size="22" fill="#1a1a2e" text-anchor="middle" font-weight="700">72%</text>
             <text x="310" y="180" font-family="Inter,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Value Added</text>
-            <!-- Legend -->
             <circle cx="230" cy="278" r="5" fill="#1a9e6e"/>
             <text x="240" y="282" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Value (72%)</text>
             <circle cx="230" cy="296" r="5" fill="#f59e0b"/>
             <text x="240" y="300" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Non-Value (18%)</text>
             <circle cx="230" cy="314" r="5" fill="#ef4444"/>
             <text x="240" y="318" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Waste (10%)</text>
-            <!-- Camera icon badge -->
             <rect x="336" y="72" width="48" height="40" rx="10" fill="#1a9e6e"/>
             <rect x="344" y="80" width="32" height="22" rx="4" fill="white" opacity="0.2"/>
             <circle cx="360" cy="91" r="7" fill="none" stroke="white" stroke-width="2"/>
@@ -1276,28 +379,23 @@ blockquote {
         </div>
       </div>
       <div class="col-img fade-in">
-        <!-- Tablet + phone multi-device SVG -->
         <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" class="devices-svg">
           <defs>
             <filter id="dev-shadow">
               <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(0,0,0,0.2)"/>
             </filter>
           </defs>
-          <!-- Tablet -->
           <rect x="40" y="40" width="260" height="190" rx="14" fill="#1a1a2e" filter="url(#dev-shadow)"/>
           <rect x="48" y="52" width="244" height="166" rx="8" fill="#0d1117"/>
-          <!-- App bar on tablet -->
           <rect x="48" y="52" width="244" height="28" rx="8" fill="#161b22"/>
           <circle cx="62" cy="66" r="4" fill="#ef4444" opacity="0.7"/>
           <circle cx="76" cy="66" r="4" fill="#f59e0b" opacity="0.7"/>
           <circle cx="90" cy="66" r="4" fill="#22c55e" opacity="0.7"/>
           <text x="170" y="71" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" text-anchor="middle">Value Lean Dashboard</text>
-          <!-- Chart area -->
           <rect x="56" y="88" width="108" height="120" rx="6" fill="#161b22"/>
           <text x="110" y="102" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">TREND</text>
           <polyline points="64,188 78,175 92,168 106,155 120,148 134,138 148,130 154,124" fill="none" stroke="#1a9e6e" stroke-width="1.5"/>
           <polygon points="64,188 78,175 92,168 106,155 120,148 134,138 148,130 154,124 154,196 64,196" fill="rgba(26,158,110,0.1)"/>
-          <!-- KPI cards -->
           <rect x="172" y="88" width="56" height="52" rx="6" fill="#0f2d1f"/>
           <text x="200" y="110" font-family="Inter,sans-serif" font-size="14" fill="#1a9e6e" text-anchor="middle" font-weight="700">72%</text>
           <text x="200" y="124" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Value</text>
@@ -1306,18 +404,16 @@ blockquote {
           <text x="260" y="124" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Non-Val</text>
           <rect x="172" y="148" width="56" height="36" rx="6" fill="#161b22"/>
           <text x="200" y="162" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Project</text>
-          <rect x="172" y="160" width="44" height="5" rx="2" fill="#333" />
+          <rect x="172" y="160" width="44" height="5" rx="2" fill="#333"/>
           <rect x="172" y="160" width="28" height="5" rx="2" fill="#1a9e6e"/>
           <rect x="172" y="170" width="44" height="5" rx="2" fill="#333"/>
           <rect x="172" y="170" width="18" height="5" rx="2" fill="#3b82f6"/>
           <rect x="234" y="148" width="52" height="36" rx="6" fill="#161b22"/>
           <text x="260" y="168" font-family="Inter,sans-serif" font-size="18" fill="#22c55e" text-anchor="middle" font-weight="700">↑</text>
-          <!-- Phone floating in front -->
           <rect x="250" y="150" width="120" height="210" rx="18" fill="#0d1117" filter="url(#dev-shadow)"/>
           <rect x="258" y="162" width="104" height="186" rx="10" fill="#161b22"/>
           <rect x="258" y="162" width="104" height="24" rx="10" fill="#1c2432"/>
           <text x="310" y="178" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">Value Lean</text>
-          <!-- Mini phone content -->
           <rect x="266" y="194" width="88" height="30" rx="5" fill="#0f2d1f"/>
           <text x="310" y="207" font-family="Inter,sans-serif" font-size="9" fill="#1a9e6e" text-anchor="middle" font-weight="600">Observation</text>
           <text x="310" y="219" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Station 3 — Active</text>
@@ -1325,11 +421,9 @@ blockquote {
           <rect x="266" y="232" width="64" height="8" rx="3" fill="#1a9e6e" opacity="0.7"/>
           <rect x="266" y="248" width="88" height="8" rx="3" fill="#222"/>
           <rect x="266" y="248" width="32" height="8" rx="3" fill="#f59e0b" opacity="0.7"/>
-          <!-- Camera button on phone -->
           <circle cx="310" cy="300" r="16" fill="#1a9e6e"/>
           <circle cx="310" cy="300" r="11" fill="none" stroke="white" stroke-width="1.5"/>
           <circle cx="310" cy="300" r="5" fill="white"/>
-          <!-- Home bar -->
           <rect x="290" y="338" width="40" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
         </svg>
       </div>
@@ -1401,9 +495,6 @@ blockquote {
       </div>
       <div class="pricing-grid">
         <div class="pricing-card fade-in">
-          <div class="plan-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
           <div class="plan-badge">Free</div>
           <div class="plan-price"><sup>$</sup>0<small>/30 days</small></div>
           <ul class="plan-features">
@@ -1419,9 +510,6 @@ blockquote {
           <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan outline" target="_blank">Start Free</a>
         </div>
         <div class="pricing-card fade-in">
-          <div class="plan-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
           <div class="plan-badge silver">Silver</div>
           <div class="plan-price"><sup>$</sup>10<small>/30 days</small></div>
           <ul class="plan-features">
@@ -1438,9 +526,6 @@ blockquote {
         </div>
         <div class="pricing-card featured fade-in">
           <div class="popular-tag">Most Popular</div>
-          <div class="plan-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
           <div class="plan-badge gold">Gold</div>
           <div class="plan-price"><sup>$</sup>18<small>/60 days</small></div>
           <ul class="plan-features">
@@ -1456,9 +541,6 @@ blockquote {
           <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan" target="_blank">Get Gold</a>
         </div>
         <div class="pricing-card fade-in">
-          <div class="plan-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
           <div class="plan-badge platinum">Platinum</div>
           <div class="plan-price"><sup>$</sup>24<small>/90 days</small></div>
           <ul class="plan-features">
@@ -1474,9 +556,6 @@ blockquote {
           <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" class="btn-plan" target="_blank">Get Platinum</a>
         </div>
         <div class="pricing-card fade-in">
-          <div class="plan-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-          </div>
           <div class="plan-badge monthly">Monthly</div>
           <div class="plan-price"><sup>$</sup>8<small>/month</small></div>
           <ul class="plan-features">
@@ -1513,55 +592,49 @@ blockquote {
         </div>
       </div>
       <div class="col-img fade-in">
-        <!-- About SVG illustration: value cycle -->
         <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg" class="about-svg">
-          <!-- Outer ring -->
           <circle cx="190" cy="190" r="160" fill="none" stroke="rgba(26,158,110,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
           <circle cx="190" cy="190" r="120" fill="none" stroke="rgba(26,158,110,0.1)" stroke-width="1"/>
-          <!-- Rotating arc -->
-          <circle cx="190" cy="190" r="160" fill="none" stroke="url(#arc-grad)" stroke-width="3" stroke-dasharray="200 806" stroke-linecap="round" class="spin-arc"/>
           <defs>
             <linearGradient id="arc-grad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#1a9e6e" stop-opacity="0"/>
               <stop offset="100%" stop-color="#1a9e6e"/>
             </linearGradient>
           </defs>
-          <!-- Center -->
           <circle cx="190" cy="190" r="55" fill="#0f2d1f"/>
           <circle cx="190" cy="190" r="50" fill="none" stroke="rgba(26,158,110,0.3)" stroke-width="1"/>
           <text x="190" y="183" font-family="Inter,sans-serif" font-size="13" fill="#1a9e6e" text-anchor="middle" font-weight="700">VALUE</text>
           <text x="190" y="200" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">FLOW</text>
-          <!-- 4 nodes -->
-          <!-- Observe (top) -->
+          <!-- Observe -->
           <circle cx="190" cy="42" r="34" fill="#0d2318"/>
           <circle cx="190" cy="42" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
           <svg x="176" y="28" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           <text x="190" y="90" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">OBSERVE</text>
-          <!-- Capture (right) -->
+          <!-- Capture -->
           <circle cx="338" cy="190" r="34" fill="#0d2318"/>
           <circle cx="338" cy="190" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
           <svg x="324" y="176" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
           <text x="338" y="238" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">CAPTURE</text>
-          <!-- Improve (bottom) -->
+          <!-- Improve -->
           <circle cx="190" cy="338" r="34" fill="#0d2318"/>
           <circle cx="190" cy="338" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
           <svg x="176" y="324" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           <text x="190" y="286" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">IMPROVE</text>
-          <!-- Measure (left) -->
+          <!-- Measure -->
           <circle cx="42" cy="190" r="34" fill="#0d2318"/>
           <circle cx="42" cy="190" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
           <svg x="28" y="176" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           <text x="42" y="238" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">MEASURE</text>
-          <!-- Connector arrows -->
-          <path d="M 210 55 Q 290 80 325 165" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
-          <path d="M 325 215 Q 290 300 215 330" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
-          <path d="M 165 330 Q 100 300 65 215" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
-          <path d="M 65 165 Q 100 80 170 55" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Arrows -->
           <defs>
             <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
               <path d="M 0 0 L 6 3 L 0 6 Z" fill="rgba(26,158,110,0.5)"/>
             </marker>
           </defs>
+          <path d="M 210 55 Q 290 80 325 165" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 325 215 Q 290 300 215 330" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 165 330 Q 100 300 65 215" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 65 165 Q 100 80 170 55" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
         </svg>
       </div>
     </div>
@@ -1611,11 +684,11 @@ blockquote {
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                <input type="text" id="name" name="name" placeholder="enter" required>
               </div>
               <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                <input type="email" id="email" name="email" placeholder="priya07@gmail.com" required>
               </div>
             </div>
             <div class="form-group">
@@ -1689,85 +762,6 @@ blockquote {
     </div>
   </footer>
 
-  <script>
-/* ========================================
-   LEAN APP — main.js
-   Handles navbar scroll, mobile menu,
-   scroll-triggered animations
-======================================== */
-
-(function () {
-  'use strict';
-
-  /* ---- Navbar: add scrolled class ---- */
-  const navbar = document.getElementById('navbar');
-  function onScroll() {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ---- Mobile nav toggle ---- */
-  const navToggle = document.getElementById('navToggle');
-  const navLinks  = document.getElementById('navLinks');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
-    });
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-      });
-    });
-  }
-
-  /* ---- Intersection Observer: fade-in ---- */
-  const fadeEls = document.querySelectorAll('.fade-in');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    fadeEls.forEach(function (el) { observer.observe(el); });
-  } else {
-    fadeEls.forEach(function (el) { el.classList.add('visible'); });
-  }
-
-  /* ---- Contact form: prevent default / show success ---- */
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = contactForm.querySelector('.btn-submit');
-      btn.textContent = 'Message sent! We\'ll be in touch soon.';
-      btn.style.background = '#0f6e50';
-      btn.disabled = true;
-    });
-  }
-
-  /* ---- Newsletter form ---- */
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = newsletterForm.querySelector('button');
-      btn.textContent = 'Subscribed ✓';
-      btn.style.background = 'rgba(255,255,255,0.3)';
-      btn.disabled = true;
-    });
-  }
-
-})();
-
-</script>
+  <script src="js/script.js"></script>
 </body>
 </html>
