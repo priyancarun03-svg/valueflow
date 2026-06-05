@@ -1,20 +1,14 @@
 /* ========================================
-   LEAN APP — main.js
-   Handles navbar scroll, mobile menu,
-   scroll-triggered animations
+   LEAN APP — script.js
 ======================================== */
 
 (function () {
   'use strict';
 
-  /* ---- Navbar: add scrolled class ---- */
+  /* ---- Navbar scroll ---- */
   const navbar = document.getElementById('navbar');
   function onScroll() {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -28,9 +22,7 @@
       navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
     });
     navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-      });
+      link.addEventListener('click', function () { navLinks.classList.remove('open'); });
     });
   }
 
@@ -50,14 +42,14 @@
     fadeEls.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* ---- Contact form: prevent default / show success ---- */
+  /* ---- Contact form ---- */
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const btn = contactForm.querySelector('.btn-submit');
-      btn.textContent = 'Message sent! We\'ll be in touch soon.';
-      btn.style.background = '#0f6e50';
+      btn.textContent = "Message sent! We'll be in touch soon.";
+      btn.style.background = '#00838f';
       btn.disabled = true;
     });
   }

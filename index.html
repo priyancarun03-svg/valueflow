@@ -6,7 +6,7 @@
   <meta name="description" content="LEAN Value-flow App — Observe, capture and improve your processes">
   <title>LEAN APP — Value Flow</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,11 +15,11 @@
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#home" class="nav-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="#1a9e6e" stroke-width="2"/>
-          <polygon points="14,7 21,11 21,18 14,22 7,18 7,11" fill="#1a9e6e" opacity="0.25"/>
-          <circle cx="14" cy="14" r="3" fill="#1a9e6e"/>
-        </svg>
+        <img src="image/profile img.png" style="
+    width: 60px;
+    height: 40px;
+    object-fit: cover; ">
+
         LEAN<span>APP</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -39,32 +39,27 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <svg class="hero-svg-bg" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <svg class="hero-svg-bg" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5">
         <defs>
-          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(26,158,110,0.07)" stroke-width="1"/>
-          </pattern>
           <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#1a9e6e" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="#1a9e6e" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#00acc1" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#00acc1" stop-opacity="0"/>
           </radialGradient>
           <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#26c6da" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#26c6da" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <rect width="1200" height="700" fill="url(#grid)"/>
         <ellipse cx="300" cy="350" rx="400" ry="300" fill="url(#glow1)"/>
         <ellipse cx="900" cy="200" rx="300" ry="220" fill="url(#glow2)"/>
-        <polygon points="80,120 110,103 140,120 140,155 110,172 80,155" fill="none" stroke="rgba(26,158,110,0.2)" stroke-width="1.5"/>
-        <polygon points="1050,80 1075,66 1100,80 1100,108 1075,122 1050,108" fill="none" stroke="rgba(26,158,110,0.15)" stroke-width="1"/>
-        <polygon points="950,500 985,480 1020,500 1020,540 985,560 950,540" fill="rgba(26,158,110,0.05)" stroke="rgba(26,158,110,0.2)" stroke-width="1"/>
-        <polygon points="180,580 205,566 230,580 230,608 205,622 180,608" fill="none" stroke="rgba(37,99,235,0.2)" stroke-width="1"/>
-        <line x1="110" y1="137" x2="300" y2="350" stroke="rgba(26,158,110,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
-        <line x1="985" y1="94" x2="700" y2="250" stroke="rgba(37,99,235,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
-        <circle cx="600" cy="120" r="3" fill="rgba(26,158,110,0.4)"/>
-        <circle cx="200" cy="300" r="2" fill="rgba(37,99,235,0.4)"/>
-        <circle cx="1000" cy="400" r="2.5" fill="rgba(26,158,110,0.35)"/>
+        <polygon points="80,120 110,103 140,120 140,155 110,172 80,155" fill="none" stroke="rgba(0,172,193,0.2)" stroke-width="1.5"/>
+        <polygon points="1050,80 1075,66 1100,80 1100,108 1075,122 1050,108" fill="none" stroke="rgba(0,172,193,0.15)" stroke-width="1"/>
+        <polygon points="950,500 985,480 1020,500 1020,540 985,560 950,540" fill="rgba(0,172,193,0.05)" stroke="rgba(0,172,193,0.2)" stroke-width="1"/>
+        <line x1="110" y1="137" x2="300" y2="350" stroke="rgba(0,172,193,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+        <line x1="985" y1="94" x2="700" y2="250" stroke="rgba(0,172,193,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+        <circle cx="600" cy="120" r="3" fill="rgba(0,172,193,0.4)"/>
+        <circle cx="200" cy="300" r="2" fill="rgba(38,198,218,0.4)"/>
+        <circle cx="1000" cy="400" r="2.5" fill="rgba(0,172,193,0.35)"/>
       </svg>
     </div>
     <div class="hero-overlay"></div>
@@ -73,16 +68,16 @@
         Now Available on iOS &amp; Android
       </div>
       <h1>
-  Improve Manufacturing Performance
-  with <span>Value-Flow</span>
-</h1>
+        Improve Manufacturing Performance
+        with <span>Value-Flow</span>
+      </h1>
       <p class="hero-sub">
-  Value-Flow Sweden helps manufacturing companies,
-  factory owners, and industrial organizations
-  identify inefficiencies, reduce waste,
-  and improve operational performance through
-  Lean methodologies and continuous improvement.
-</p>
+        Value-Flow Sweden helps manufacturing companies,
+        factory owners, and industrial organizations
+        identify inefficiencies, reduce waste,
+        and improve operational performance through
+        Lean methodologies and continuous improvement.
+      </p>
       <div class="hero-cta">
         <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" class="btn-store" target="_blank">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -92,13 +87,8 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.99.13l12.12-6.99-2.54-2.54-10.57 9.4zM.53 1.56C.2 1.9 0 2.42 0 3.1v17.8c0 .68.2 1.2.54 1.53l.08.08 9.97-9.97v-.24L.61 1.48l-.08.08zM20.12 10.55l-2.55-1.47-2.85 2.85 2.85 2.85 2.56-1.48c.73-.42.73-1.33-.01-1.75zM3.18.24l12.11 6.99-2.54 2.54L2.18.37A1.08 1.08 0 013.18.24z"/></svg>
           <span><small>Get it on</small>Google Play</span>
         </a>
-        <a href="#contact" class="btn-store">
-  Book a Consultation
-</a>
-
-<a href="#about" class="btn-store">
-  Learn More
-</a>
+        <a href="#contact" class="btn-store">Book a Consultation</a>
+        <a href="#about" class="btn-store">Learn More</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><span>4.8★</span><small>App Rating</small></div>
@@ -110,56 +100,20 @@
         <div class="stat"><span>2017</span><small>Founded</small></div>
       </div>
     </div>
-    <!-- Hero phone illustration -->
-    <div class="hero-phone-wrap">
-      <div class="hero-phone">
-        <div class="hp-notch"></div>
-        <div class="hp-screen">
-          <div class="hp-topbar">
-            <span class="hp-dot"></span>
-            <span class="hp-appname">Value Lean</span>
-          </div>
-          <div class="hp-card green-card">
-            <div class="hp-card-label">Value Added</div>
-            <div class="hp-card-bar"><div class="hp-bar-fill" style="width:72%"></div></div>
-            <div class="hp-card-pct">72%</div>
-          </div>
-          <div class="hp-card amber-card">
-            <div class="hp-card-label">Non-Value</div>
-            <div class="hp-card-bar"><div class="hp-bar-fill amber" style="width:18%"></div></div>
-            <div class="hp-card-pct">18%</div>
-          </div>
-          <div class="hp-card red-card">
-            <div class="hp-card-label">Waste</div>
-            <div class="hp-card-bar"><div class="hp-bar-fill red" style="width:10%"></div></div>
-            <div class="hp-card-pct">10%</div>
-          </div>
-          <div class="hp-mini-chart">
-            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="0,40 20,32 40,28 60,20 80,16 100,10 120,6" fill="none" stroke="#1a9e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <polygon points="0,40 20,32 40,28 60,20 80,16 100,10 120,6 120,50 0,50" fill="rgba(26,158,110,0.08)"/>
-            </svg>
-          </div>
-          <div class="hp-btns">
-            <div class="hp-btn active">Observe</div>
-            <div class="hp-btn">Compare</div>
-            <div class="hp-btn">Report</div>
-          </div>
-        </div>
-      </div>
-      <div class="float-badge fb1">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Process Captured
-      </div>
-      <div class="float-badge fb2">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        Live Analysis
-      </div>
-      <div class="float-badge fb3">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
-        Team Connected
-      </div>
+
+    <!-- Real app screenshot in hero -->
+    <div>
+      <div class="hero-app-img-wrap">
+        <div class="hero-app-glow"></div>
+        <img src="image/profile img.png"style="
+    width: 600px;
+    height: 700px;
+    object-fit:
+    object-fit: cover; ">
+        
+      
     </div>
+
     <div class="hero-scroll-hint">
       <span>Scroll to explore</span>
       <div class="scroll-arrow"></div>
@@ -174,52 +128,64 @@
           <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" class="observe-svg">
             <defs>
               <filter id="soft-shadow">
-                <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.12)"/>
+                <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.10)"/>
               </filter>
             </defs>
             <rect x="10" y="10" width="400" height="360" rx="16" fill="#ffffff" filter="url(#soft-shadow)"/>
-            <rect x="10" y="10" width="400" height="48" rx="16" fill="#f8fafb"/>
-            <rect x="10" y="42" width="400" height="16" fill="#f8fafb"/>
-            <circle cx="34" cy="34" r="6" fill="#ef4444"/>
+            <rect x="10" y="10" width="400" height="48" rx="16" fill="#f0fdfe"/>
+            <rect x="10" y="42" width="400" height="16" fill="#f0fdfe"/>
+            <circle cx="34" cy="34" r="6" fill="#ef5350"/>
             <circle cx="54" cy="34" r="6" fill="#f59e0b"/>
-            <circle cx="74" cy="34" r="6" fill="#22c55e"/>
-            <text x="180" y="39" font-family="Inter,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="500">Process Observer</text>
-            <rect x="30" y="80" width="160" height="64" rx="10" fill="#e6f7f1"/>
-            <rect x="30" y="80" width="5" height="64" rx="3" fill="#1a9e6e"/>
-            <text x="46" y="100" font-family="Inter,sans-serif" font-size="10" fill="#0f6e50" font-weight="600">VALUE ADDED</text>
-            <text x="46" y="116" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Assembly step — 4 min</text>
-            <rect x="46" y="124" width="80" height="7" rx="3" fill="#1a9e6e" opacity="0.4"/>
-            <rect x="46" y="124" width="58" height="7" rx="3" fill="#1a9e6e"/>
-            <rect x="30" y="158" width="160" height="64" rx="10" fill="#fef3c7"/>
+            <circle cx="74" cy="34" r="6" fill="#26c6da"/>
+            <text x="180" y="39" font-family="DM Sans,sans-serif" font-size="11" fill="#5a7184" text-anchor="middle" font-weight="500">Process Observer</text>
+
+            <!-- Value Added -->
+            <rect x="30" y="80" width="160" height="64" rx="10" fill="#e0f7fa"/>
+            <rect x="30" y="80" width="5" height="64" rx="3" fill="#00acc1"/>
+            <text x="46" y="100" font-family="DM Sans,sans-serif" font-size="10" fill="#006064" font-weight="600">VALUE ADDED</text>
+            <text x="46" y="116" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184">Assembly step — 4 min</text>
+            <rect x="46" y="124" width="80" height="7" rx="3" fill="#00acc1" opacity="0.3"/>
+            <rect x="46" y="124" width="58" height="7" rx="3" fill="#00acc1"/>
+
+            <!-- Non-Value -->
+            <rect x="30" y="158" width="160" height="64" rx="10" fill="#fff8e1"/>
             <rect x="30" y="158" width="5" height="64" rx="3" fill="#f59e0b"/>
-            <text x="46" y="178" font-family="Inter,sans-serif" font-size="10" fill="#b45309" font-weight="600">NON-VALUE</text>
-            <text x="46" y="194" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Waiting — 12 min</text>
-            <rect x="46" y="202" width="80" height="7" rx="3" fill="#f59e0b" opacity="0.4"/>
+            <text x="46" y="178" font-family="DM Sans,sans-serif" font-size="10" fill="#b45309" font-weight="600">NON-VALUE</text>
+            <text x="46" y="194" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184">Waiting — 12 min</text>
+            <rect x="46" y="202" width="80" height="7" rx="3" fill="#f59e0b" opacity="0.3"/>
             <rect x="46" y="202" width="24" height="7" rx="3" fill="#f59e0b"/>
-            <rect x="30" y="236" width="160" height="64" rx="10" fill="#fee2e2"/>
-            <rect x="30" y="236" width="5" height="64" rx="3" fill="#ef4444"/>
-            <text x="46" y="256" font-family="Inter,sans-serif" font-size="10" fill="#b91c1c" font-weight="600">UNSAFE OBS.</text>
-            <text x="46" y="272" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Near miss detected</text>
-            <rect x="46" y="280" width="80" height="7" rx="3" fill="#ef4444" opacity="0.3"/>
-            <rect x="46" y="280" width="12" height="7" rx="3" fill="#ef4444"/>
+
+            <!-- Unsafe -->
+            <rect x="30" y="236" width="160" height="64" rx="10" fill="#ffebee"/>
+            <rect x="30" y="236" width="5" height="64" rx="3" fill="#ef5350"/>
+            <text x="46" y="256" font-family="DM Sans,sans-serif" font-size="10" fill="#b71c1c" font-weight="600">UNSAFE OBS.</text>
+            <text x="46" y="272" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184">Near miss detected</text>
+            <rect x="46" y="280" width="80" height="7" rx="3" fill="#ef5350" opacity="0.3"/>
+            <rect x="46" y="280" width="12" height="7" rx="3" fill="#ef5350"/>
+
+            <!-- Donut chart - teal theme -->
             <circle cx="310" cy="170" r="70" fill="none" stroke="#e5e7eb" stroke-width="20"/>
-            <circle cx="310" cy="170" r="70" fill="none" stroke="#1a9e6e" stroke-width="20" stroke-dasharray="264 176" stroke-dashoffset="66" stroke-linecap="round"/>
+            <circle cx="310" cy="170" r="70" fill="none" stroke="#00acc1" stroke-width="20" stroke-dasharray="264 176" stroke-dashoffset="66" stroke-linecap="round"/>
             <circle cx="310" cy="170" r="70" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="88 352" stroke-dashoffset="-198" stroke-linecap="round"/>
-            <circle cx="310" cy="170" r="70" fill="none" stroke="#ef4444" stroke-width="20" stroke-dasharray="44 396" stroke-dashoffset="-286" stroke-linecap="round"/>
-            <text x="310" y="163" font-family="Inter,sans-serif" font-size="22" fill="#1a1a2e" text-anchor="middle" font-weight="700">72%</text>
-            <text x="310" y="180" font-family="Inter,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Value Added</text>
-            <circle cx="230" cy="278" r="5" fill="#1a9e6e"/>
-            <text x="240" y="282" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Value (72%)</text>
+            <circle cx="310" cy="170" r="70" fill="none" stroke="#ef5350" stroke-width="20" stroke-dasharray="44 396" stroke-dashoffset="-286" stroke-linecap="round"/>
+            <text x="310" y="163" font-family="Space Grotesk,sans-serif" font-size="22" fill="#0d2137" text-anchor="middle" font-weight="700">72%</text>
+            <text x="310" y="180" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184" text-anchor="middle">Value Added</text>
+
+            <!-- Legend -->
+            <circle cx="230" cy="278" r="5" fill="#00acc1"/>
+            <text x="240" y="282" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184">Value (72%)</text>
             <circle cx="230" cy="296" r="5" fill="#f59e0b"/>
-            <text x="240" y="300" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Non-Value (18%)</text>
-            <circle cx="230" cy="314" r="5" fill="#ef4444"/>
-            <text x="240" y="318" font-family="Inter,sans-serif" font-size="9" fill="#6b7280">Waste (10%)</text>
-            <rect x="336" y="72" width="48" height="40" rx="10" fill="#1a9e6e"/>
+            <text x="240" y="300" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184">Non-Value (18%)</text>
+            <circle cx="230" cy="314" r="5" fill="#ef5350"/>
+            <text x="240" y="318" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7184">Waste (10%)</text>
+
+            <!-- Camera button -->
+            <rect x="336" y="72" width="48" height="40" rx="10" fill="#00acc1"/>
             <rect x="344" y="80" width="32" height="22" rx="4" fill="white" opacity="0.2"/>
             <circle cx="360" cy="91" r="7" fill="none" stroke="white" stroke-width="2"/>
             <circle cx="360" cy="91" r="3" fill="white"/>
             <circle cx="372" cy="83" r="2" fill="white"/>
-            <text x="360" y="122" font-family="Inter,sans-serif" font-size="8" fill="#0f6e50" text-anchor="middle" font-weight="600">CAPTURE</text>
+            <text x="360" y="122" font-family="DM Sans,sans-serif" font-size="8" fill="#006064" text-anchor="middle" font-weight="600">CAPTURE</text>
           </svg>
         </div>
       </div>
@@ -238,142 +204,33 @@
         </ul>
       </div>
     </div>
-
-    
   </section>
 
   <!-- ============ RSV / SCREENSHOTS ============ -->
-  <section class="section screens-section bg-dark-section" id="screens">
+  <section class="section screens-section bg-dark-section" id="screens" 
+    style="
+        background-image: url('./image/ppqqqq.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 500px;
+    "
+>
+    
+
     <div class="container">
       <div class="section-header center">
         <div class="section-tag light">RSV — Right Simple Visuals</div>
-        <h2 style="color:#fff;">Words are good. Visuals are better.</h2>
-        <p style="color:rgba(255,255,255,0.55);">Our RSV approach triggers an instant response. Simple infographics connect process reality right before your eyes.</p>
-      </div>
-      <div class="screens-grid">
-
-        <!-- Screen 1: Value Map -->
-        <div class="screen-card fade-in">
-          <div class="screen-phone">
-            <div class="sp-header green-h">Value Map</div>
-            <div class="sp-body">
-              <div class="sp-row"><div class="sp-icon green-i">VA</div><div><div class="sp-title">Assembly</div><div class="sp-bar-w"><div class="sp-bar-f green-f" style="width:80%"></div></div></div></div>
-              <div class="sp-row"><div class="sp-icon green-i">VA</div><div><div class="sp-title">Quality Check</div><div class="sp-bar-w"><div class="sp-bar-f green-f" style="width:60%"></div></div></div></div>
-              <div class="sp-row"><div class="sp-icon amber-i">NV</div><div><div class="sp-title">Wait</div><div class="sp-bar-w"><div class="sp-bar-f amber-f" style="width:30%"></div></div></div></div>
-              <div class="sp-row"><div class="sp-icon red-i">W</div><div><div class="sp-title">Rework</div><div class="sp-bar-w"><div class="sp-bar-f red-f" style="width:15%"></div></div></div></div>
-              <div class="sp-score">Score <strong>78%</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screen 2: Unsafe Obs -->
-        <div class="screen-card fade-in">
-          <div class="screen-phone">
-            <div class="sp-header red-h">Safety Check</div>
-            <div class="sp-body">
-              <div class="sp-safety-img">
-                <svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="100" height="70" rx="6" fill="#1a0d0d"/>
-                  <polygon points="50,15 65,42 35,42" fill="none" stroke="#ef4444" stroke-width="2"/>
-                  <text x="50" y="38" text-anchor="middle" font-size="12" fill="#ef4444" font-weight="bold">!</text>
-                  <text x="50" y="56" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.6)" font-family="Inter,sans-serif">Near Miss Detected</text>
-                </svg>
-              </div>
-              <div class="sp-obs-list">
-                <div class="sp-obs-item red">No PPE — Station 4</div>
-                <div class="sp-obs-item amber">Slipping hazard</div>
-                <div class="sp-obs-item green">Corrected ✓</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screen 3: Dashboard (featured) -->
-        <div class="screen-card featured fade-in">
-          <div class="screen-phone featured-phone">
-            <div class="sp-header blue-h">Live Dashboard</div>
-            <div class="sp-body">
-              <div class="sp-kpi-row">
-                <div class="sp-kpi green-kpi"><div class="sp-kpi-n">72%</div><div class="sp-kpi-l">Value</div></div>
-                <div class="sp-kpi amber-kpi"><div class="sp-kpi-n">18%</div><div class="sp-kpi-l">Non-Val</div></div>
-                <div class="sp-kpi red-kpi"><div class="sp-kpi-n">10%</div><div class="sp-kpi-l">Waste</div></div>
-              </div>
-              <svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin:6px 0">
-                <polyline points="0,50 20,42 40,36 60,28 80,22 100,14 120,10 140,6" fill="none" stroke="#1a9e6e" stroke-width="2" stroke-linecap="round"/>
-                <polygon points="0,50 20,42 40,36 60,28 80,22 100,14 120,10 140,6 140,60 0,60" fill="rgba(26,158,110,0.12)"/>
-                <circle cx="140" cy="6" r="4" fill="#1a9e6e"/>
-              </svg>
-              <div class="sp-project-row">
-                <div class="sp-proj-label">Project Alpha</div>
-                <div class="sp-proj-prog"><div class="sp-proj-fill" style="width:65%"></div></div>
-                <div class="sp-proj-pct">65%</div>
-              </div>
-              <div class="sp-project-row">
-                <div class="sp-proj-label">Line B Audit</div>
-                <div class="sp-proj-prog"><div class="sp-proj-fill blue" style="width:40%"></div></div>
-                <div class="sp-proj-pct">40%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screen 4: Compare -->
-        <div class="screen-card fade-in">
-          <div class="screen-phone">
-            <div class="sp-header purple-h">Compare Mode</div>
-            <div class="sp-body">
-              <div class="sp-compare-row">
-                <div class="sp-compare-col">
-                  <div class="sp-compare-label">Before</div>
-                  <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="width:50px;height:50px">
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="#e5e7eb" stroke-width="7"/>
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="#f59e0b" stroke-width="7" stroke-dasharray="44 82" stroke-dashoffset="31"/>
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="#1a9e6e" stroke-width="7" stroke-dasharray="62 64" stroke-dashoffset="-13"/>
-                  </svg>
-                  <div class="sp-compare-pct">55%</div>
-                </div>
-                <div class="sp-compare-arrow">→</div>
-                <div class="sp-compare-col">
-                  <div class="sp-compare-label">After</div>
-                  <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="width:50px;height:50px">
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="#e5e7eb" stroke-width="7"/>
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="#f59e0b" stroke-width="7" stroke-dasharray="20 106" stroke-dashoffset="31"/>
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="#1a9e6e" stroke-width="7" stroke-dasharray="86 40" stroke-dashoffset="-13"/>
-                  </svg>
-                  <div class="sp-compare-pct sp-improve">72% ↑</div>
-                </div>
-              </div>
-              <div class="sp-compare-note">+17% improvement</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Screen 5: Projects -->
-        <div class="screen-card fade-in">
-          <div class="screen-phone">
-            <div class="sp-header teal-h">Projects</div>
-            <div class="sp-body">
-              <div class="sp-task"><div class="sp-task-dot done"></div><div class="sp-task-txt done-txt">Station 1 audit</div></div>
-              <div class="sp-task"><div class="sp-task-dot done"></div><div class="sp-task-txt done-txt">Ergonomic review</div></div>
-              <div class="sp-task"><div class="sp-task-dot active-dot"></div><div class="sp-task-txt">5S Observation</div></div>
-              <div class="sp-task"><div class="sp-task-dot pending"></div><div class="sp-task-txt pending-txt">Safety walk</div></div>
-              <div class="sp-task"><div class="sp-task-dot pending"></div><div class="sp-task-txt pending-txt">Value stream map</div></div>
-              <div class="sp-team-row">
-                <div class="sp-avatar" style="background:#1a9e6e">A</div>
-                <div class="sp-avatar" style="background:#3b82f6">B</div>
-                <div class="sp-avatar" style="background:#7c3aed">C</div>
-                <div class="sp-avatar-more">+2</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+        
+      
   </section>
 
   <!-- ============ WHY LEAN ============ -->
-  <section class="section why-section" id="why-lean">
+  <section class="section why-section" id="why-lean" style="
+        background-image: url('./image/ChatGPT Image Jun 5, 2026, 02_44_02 PM.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 500px;
+    ">
     <div class="container two-col reverse">
       <div class="col-text fade-in">
         <div class="section-tag">Why Lean</div>
@@ -403,46 +260,48 @@
               <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(0,0,0,0.2)"/>
             </filter>
           </defs>
-          <rect x="40" y="40" width="260" height="190" rx="14" fill="#1a1a2e" filter="url(#dev-shadow)"/>
-          <rect x="48" y="52" width="244" height="166" rx="8" fill="#0d1117"/>
-          <rect x="48" y="52" width="244" height="28" rx="8" fill="#161b22"/>
-          <circle cx="62" cy="66" r="4" fill="#ef4444" opacity="0.7"/>
+          <!-- Laptop -->
+          <rect x="40" y="40" width="260" height="190" rx="14" fill="#0a1628" filter="url(#dev-shadow)"/>
+          <rect x="48" y="52" width="244" height="166" rx="8" fill="#0d1e35"/>
+          <rect x="48" y="52" width="244" height="28" rx="8" fill="#162440"/>
+          <circle cx="62" cy="66" r="4" fill="#ef5350" opacity="0.7"/>
           <circle cx="76" cy="66" r="4" fill="#f59e0b" opacity="0.7"/>
-          <circle cx="90" cy="66" r="4" fill="#22c55e" opacity="0.7"/>
-          <text x="170" y="71" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" text-anchor="middle">Value Lean Dashboard</text>
-          <rect x="56" y="88" width="108" height="120" rx="6" fill="#161b22"/>
-          <text x="110" y="102" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">TREND</text>
-          <polyline points="64,188 78,175 92,168 106,155 120,148 134,138 148,130 154,124" fill="none" stroke="#1a9e6e" stroke-width="1.5"/>
-          <polygon points="64,188 78,175 92,168 106,155 120,148 134,138 148,130 154,124 154,196 64,196" fill="rgba(26,158,110,0.1)"/>
-          <rect x="172" y="88" width="56" height="52" rx="6" fill="#0f2d1f"/>
-          <text x="200" y="110" font-family="Inter,sans-serif" font-size="14" fill="#1a9e6e" text-anchor="middle" font-weight="700">72%</text>
-          <text x="200" y="124" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Value</text>
+          <circle cx="90" cy="66" r="4" fill="#26c6da" opacity="0.7"/>
+          <text x="170" y="71" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" text-anchor="middle">Value Lean Dashboard</text>
+          <rect x="56" y="88" width="108" height="120" rx="6" fill="#162440"/>
+          <text x="110" y="102" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.35)" text-anchor="middle">TREND</text>
+          <polyline points="64,188 78,175 92,168 106,155 120,148 134,138 148,130 154,124" fill="none" stroke="#00acc1" stroke-width="1.5"/>
+          <polygon points="64,188 78,175 92,168 106,155 120,148 134,138 148,130 154,124 154,196 64,196" fill="rgba(0,172,193,0.1)"/>
+          <rect x="172" y="88" width="56" height="52" rx="6" fill="#0d2e35"/>
+          <text x="200" y="110" font-family="Space Grotesk,sans-serif" font-size="14" fill="#26c6da" text-anchor="middle" font-weight="700">72%</text>
+          <text x="200" y="124" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Value</text>
           <rect x="234" y="88" width="52" height="52" rx="6" fill="#2d1a00"/>
-          <text x="260" y="110" font-family="Inter,sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="700">18%</text>
-          <text x="260" y="124" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Non-Val</text>
-          <rect x="172" y="148" width="56" height="36" rx="6" fill="#161b22"/>
-          <text x="200" y="162" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Project</text>
-          <rect x="172" y="160" width="44" height="5" rx="2" fill="#333"/>
-          <rect x="172" y="160" width="28" height="5" rx="2" fill="#1a9e6e"/>
-          <rect x="172" y="170" width="44" height="5" rx="2" fill="#333"/>
-          <rect x="172" y="170" width="18" height="5" rx="2" fill="#3b82f6"/>
-          <rect x="234" y="148" width="52" height="36" rx="6" fill="#161b22"/>
-          <text x="260" y="168" font-family="Inter,sans-serif" font-size="18" fill="#22c55e" text-anchor="middle" font-weight="700">↑</text>
-          <rect x="250" y="150" width="120" height="210" rx="18" fill="#0d1117" filter="url(#dev-shadow)"/>
-          <rect x="258" y="162" width="104" height="186" rx="10" fill="#161b22"/>
-          <rect x="258" y="162" width="104" height="24" rx="10" fill="#1c2432"/>
-          <text x="310" y="178" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">Value Lean</text>
-          <rect x="266" y="194" width="88" height="30" rx="5" fill="#0f2d1f"/>
-          <text x="310" y="207" font-family="Inter,sans-serif" font-size="9" fill="#1a9e6e" text-anchor="middle" font-weight="600">Observation</text>
-          <text x="310" y="219" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Station 3 — Active</text>
+          <text x="260" y="110" font-family="Space Grotesk,sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle" font-weight="700">18%</text>
+          <text x="260" y="124" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Non-Val</text>
+          <rect x="172" y="148" width="56" height="36" rx="6" fill="#162440"/>
+          <text x="200" y="162" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">Project</text>
+          <rect x="172" y="160" width="44" height="5" rx="2" fill="#222"/>
+          <rect x="172" y="160" width="28" height="5" rx="2" fill="#00acc1"/>
+          <rect x="172" y="170" width="44" height="5" rx="2" fill="#222"/>
+          <rect x="172" y="170" width="18" height="5" rx="2" fill="#42a5f5"/>
+          <rect x="234" y="148" width="52" height="36" rx="6" fill="#162440"/>
+          <text x="260" y="168" font-family="DM Sans,sans-serif" font-size="18" fill="#26c6da" text-anchor="middle" font-weight="700">↑</text>
+          <!-- Phone overlay -->
+          <rect x="250" y="150" width="120" height="210" rx="18" fill="#0d1e35" filter="url(#dev-shadow)"/>
+          <rect x="258" y="162" width="104" height="186" rx="10" fill="#162440"/>
+          <rect x="258" y="162" width="104" height="24" rx="10" fill="#1c2e4a"/>
+          <text x="310" y="178" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.45)" text-anchor="middle">Value Lean</text>
+          <rect x="266" y="194" width="88" height="30" rx="5" fill="#0d2e35"/>
+          <text x="310" y="207" font-family="DM Sans,sans-serif" font-size="9" fill="#26c6da" text-anchor="middle" font-weight="600">Observation</text>
+          <text x="310" y="219" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.35)" text-anchor="middle">Station 3 — Active</text>
           <rect x="266" y="232" width="88" height="8" rx="3" fill="#222"/>
-          <rect x="266" y="232" width="64" height="8" rx="3" fill="#1a9e6e" opacity="0.7"/>
+          <rect x="266" y="232" width="64" height="8" rx="3" fill="#00acc1" opacity="0.7"/>
           <rect x="266" y="248" width="88" height="8" rx="3" fill="#222"/>
           <rect x="266" y="248" width="32" height="8" rx="3" fill="#f59e0b" opacity="0.7"/>
-          <circle cx="310" cy="300" r="16" fill="#1a9e6e"/>
+          <circle cx="310" cy="300" r="16" fill="#00acc1"/>
           <circle cx="310" cy="300" r="11" fill="none" stroke="white" stroke-width="1.5"/>
           <circle cx="310" cy="300" r="5" fill="white"/>
-          <rect x="290" y="338" width="40" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
+          <rect x="290" y="338" width="40" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
         </svg>
       </div>
     </div>
@@ -598,26 +457,13 @@
       <div class="col-text fade-in">
         <div class="section-tag light">About Us</div>
         <h2 style="color:#fff;">Built by Process Thinkers</h2>
-        <p style="color:rgba(255,255,255,0.65);">Value-flow Sweden is a consultancy company that develops apps for a more efficient industry. Our mission: customers see their opportunities to improve.</p>
+        <p style="color:rgba(255,255,255,0.6);">Value-flow Sweden is a consultancy company that develops apps for a more efficient industry. Our mission: customers see their opportunities to improve.</p>
         <blockquote>
           "Contrary to what many consulting companies do, we do not want to talk about what you should do — we want to help you do it. We develop apps that use modern technology to help our customers achieve their goals."
         </blockquote>
-    <h2>Helping Companies Improve Their Processes</h2>
-
-<p>
-  Value-Flow Sweden works with manufacturing
-  companies, process managers, and industrial
-  organizations to identify inefficiencies,
-  eliminate waste, and improve productivity.
-</p>
-
-<p>
-  Through Lean principles, process analysis,
-  and continuous improvement methodologies,
-  we help organizations build sustainable
-  operational excellence.
-</p>
-        <p style="color:rgba(255,255,255,0.4); font-size:0.85rem; margin-top:1rem;">Founded 2017 — value-flow.se — Sweden</p>
+        <h2 style="color:#fff;font-size:1.3rem;margin-top:1.5rem;">Helping Companies Improve Their Processes</h2>
+        <p style="color:rgba(255,255,255,0.6);">Value-Flow Sweden works with manufacturing companies, process managers, and industrial organizations to identify inefficiencies, eliminate waste, and improve productivity through Lean principles and continuous improvement methodologies.</p>
+        <p style="color:rgba(255,255,255,0.35); font-size:0.85rem; margin-top:1rem;">Founded 2017 — value-flow.se — Sweden</p>
         <div class="about-stats">
           <div class="about-stat"><span>2017</span><small>Founded</small></div>
           <div class="about-stat"><span>iOS + Android</span><small>Platforms</small></div>
@@ -626,48 +472,42 @@
       </div>
       <div class="col-img fade-in">
         <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg" class="about-svg">
-          <circle cx="190" cy="190" r="160" fill="none" stroke="rgba(26,158,110,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
-          <circle cx="190" cy="190" r="120" fill="none" stroke="rgba(26,158,110,0.1)" stroke-width="1"/>
-          <defs>
-            <linearGradient id="arc-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#1a9e6e" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#1a9e6e"/>
-            </linearGradient>
-          </defs>
-          <circle cx="190" cy="190" r="55" fill="#0f2d1f"/>
-          <circle cx="190" cy="190" r="50" fill="none" stroke="rgba(26,158,110,0.3)" stroke-width="1"/>
-          <text x="190" y="183" font-family="Inter,sans-serif" font-size="13" fill="#1a9e6e" text-anchor="middle" font-weight="700">VALUE</text>
-          <text x="190" y="200" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">FLOW</text>
+          <circle cx="190" cy="190" r="160" fill="none" stroke="rgba(0,172,193,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <circle cx="190" cy="190" r="120" fill="none" stroke="rgba(0,172,193,0.1)" stroke-width="1"/>
+          <circle cx="190" cy="190" r="55" fill="#0d2e35"/>
+          <circle cx="190" cy="190" r="50" fill="none" stroke="rgba(0,172,193,0.3)" stroke-width="1"/>
+          <text x="190" y="183" font-family="Space Grotesk,sans-serif" font-size="13" fill="#26c6da" text-anchor="middle" font-weight="700">VALUE</text>
+          <text x="190" y="200" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" text-anchor="middle">FLOW</text>
           <!-- Observe -->
-          <circle cx="190" cy="42" r="34" fill="#0d2318"/>
-          <circle cx="190" cy="42" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
-          <svg x="176" y="28" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <text x="190" y="90" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">OBSERVE</text>
+          <circle cx="190" cy="42" r="34" fill="#0d2e35"/>
+          <circle cx="190" cy="42" r="34" fill="none" stroke="rgba(0,172,193,0.4)" stroke-width="1.5"/>
+          <svg x="176" y="28" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#26c6da" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <text x="190" y="90" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.55)" text-anchor="middle" font-weight="600">OBSERVE</text>
           <!-- Capture -->
-          <circle cx="338" cy="190" r="34" fill="#0d2318"/>
-          <circle cx="338" cy="190" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
-          <svg x="324" y="176" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <text x="338" y="238" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">CAPTURE</text>
+          <circle cx="338" cy="190" r="34" fill="#0d2e35"/>
+          <circle cx="338" cy="190" r="34" fill="none" stroke="rgba(0,172,193,0.4)" stroke-width="1.5"/>
+          <svg x="324" y="176" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#26c6da" stroke-width="1.8"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <text x="338" y="238" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.55)" text-anchor="middle" font-weight="600">CAPTURE</text>
           <!-- Improve -->
-          <circle cx="190" cy="338" r="34" fill="#0d2318"/>
-          <circle cx="190" cy="338" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
-          <svg x="176" y="324" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          <text x="190" y="286" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">IMPROVE</text>
+          <circle cx="190" cy="338" r="34" fill="#0d2e35"/>
+          <circle cx="190" cy="338" r="34" fill="none" stroke="rgba(0,172,193,0.4)" stroke-width="1.5"/>
+          <svg x="176" y="324" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#26c6da" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <text x="190" y="286" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.55)" text-anchor="middle" font-weight="600">IMPROVE</text>
           <!-- Measure -->
-          <circle cx="42" cy="190" r="34" fill="#0d2318"/>
-          <circle cx="42" cy="190" r="34" fill="none" stroke="rgba(26,158,110,0.4)" stroke-width="1.5"/>
-          <svg x="28" y="176" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a9e6e" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <text x="42" y="238" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-weight="600">MEASURE</text>
+          <circle cx="42" cy="190" r="34" fill="#0d2e35"/>
+          <circle cx="42" cy="190" r="34" fill="none" stroke="rgba(0,172,193,0.4)" stroke-width="1.5"/>
+          <svg x="28" y="176" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#26c6da" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <text x="42" y="238" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.55)" text-anchor="middle" font-weight="600">MEASURE</text>
           <!-- Arrows -->
           <defs>
             <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-              <path d="M 0 0 L 6 3 L 0 6 Z" fill="rgba(26,158,110,0.5)"/>
+              <path d="M 0 0 L 6 3 L 0 6 Z" fill="rgba(0,172,193,0.5)"/>
             </marker>
           </defs>
-          <path d="M 210 55 Q 290 80 325 165" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
-          <path d="M 325 215 Q 290 300 215 330" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
-          <path d="M 165 330 Q 100 300 65 215" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
-          <path d="M 65 165 Q 100 80 170 55" fill="none" stroke="rgba(26,158,110,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 210 55 Q 290 80 325 165" fill="none" stroke="rgba(0,172,193,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 325 215 Q 290 300 215 330" fill="none" stroke="rgba(0,172,193,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 165 330 Q 100 300 65 215" fill="none" stroke="rgba(0,172,193,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
+          <path d="M 65 165 Q 100 80 170 55" fill="none" stroke="rgba(0,172,193,0.25)" stroke-width="1.5" marker-end="url(#arr)"/>
         </svg>
       </div>
     </div>
@@ -679,8 +519,7 @@
       <div class="section-header center">
         <div class="section-tag">Support</div>
         <h2>Let's Improve Your Processes</h2>
-       
-       <p>Got a question? Send us a message and we'll respond as soon as possible.</p>
+        <p>Got a question? Send us a message and we'll respond as soon as possible.</p>
       </div>
       <div class="contact-wrap">
         <div class="contact-info">
@@ -766,15 +605,13 @@
       <div class="footer-brand">
         <a href="#home" class="nav-logo" style="margin-bottom:1rem;display:inline-flex;">
           <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="#1a9e6e" stroke-width="2"/>
-            <polygon points="14,7 21,11 21,18 14,22 7,18 7,11" fill="#1a9e6e" opacity="0.25"/>
-            <circle cx="14" cy="14" r="3" fill="#1a9e6e"/>
+            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke="#26c6da" stroke-width="2"/>
+            <polygon points="14,7 21,11 21,18 14,22 7,18 7,11" fill="#26c6da" opacity="0.25"/>
+            <circle cx="14" cy="14" r="3" fill="#26c6da"/>
           </svg>
           VALUE<span>FLOW</span>
         </a>
- Helping manufacturing companies improve
-efficiency, reduce waste, and achieve
-sustainable operational excellence.
+        <p>Helping manufacturing companies improve efficiency, reduce waste, and achieve sustainable operational excellence.</p>
         <p>Walks through process components &amp; transforms them into efficient processes.</p>
         <p class="footer-copy">© 2024 <a href="https://value-flow.se" target="_blank">value-flow.se</a> — All Rights Reserved</p>
       </div>
