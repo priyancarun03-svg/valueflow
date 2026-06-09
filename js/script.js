@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   for (let i = 0; i < NUM_PARTICLES; i++) particles.push(new Particle());
 
-  // Grid lines
   function drawGrid() {
     ctx.strokeStyle = 'rgba(255,255,255,0.018)';
     ctx.lineWidth = 1;
@@ -104,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Connections between close particles
   function drawConnections() {
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
@@ -162,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15 });
   reveals.forEach(el => revealObserver.observe(el));
 
-  // Stagger children
   document.querySelectorAll('.feature-list .feature-item').forEach((el, i) => {
     el.dataset.delay = i * 80;
   });
@@ -177,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.rsv-screens-track');
   if (track) {
     const items = track.innerHTML;
-    track.innerHTML += items; // duplicate for seamless loop
+    track.innerHTML += items;
   }
 
   // ============ CONTACT FORM ============
@@ -206,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate send (replace with actual endpoint)
       await new Promise(r => setTimeout(r, 1500));
       showMsg(msg, 'success', '✓ Message sent! We\'ll get back to you soon.');
       form.reset();
@@ -232,17 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => input.placeholder = 'Your email address', 3000);
       }
     });
-  }
-
-  // ============ COUNTER ANIMATION ============
-  function animateCounter(el, target, duration = 1500) {
-    let start = 0;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { start = target; clearInterval(timer); }
-      el.textContent = Math.floor(start).toLocaleString();
-    }, 16);
   }
 
   // ============ SMOOTH NAV CLOSE ON CLICK ============
