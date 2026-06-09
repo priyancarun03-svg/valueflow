@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    handleHeroVisual();
   });
 
   const particles = [];
@@ -131,6 +132,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   animateBg();
 
+  // ============ HERO VISUAL — MOBILE / DESKTOP ============
+  const heroVisual  = document.querySelector('.hero-visual');
+  const phoneMockup = document.querySelector('.hero-phone-wrap');
+  const mobileImg   = document.querySelector('.hero-mobile-img');
+
+  function handleHeroVisual() {
+    const isMobile = window.innerWidth <= 900;
+
+    if (!heroVisual) return;
+
+    if (isMobile) {
+      heroVisual.style.animation = 'none';
+      heroVisual.style.opacity   = '1';
+      heroVisual.style.transform = 'none';
+
+      if (phoneMockup) phoneMockup.style.display = 'none';
+      if (mobileImg)   mobileImg.style.display   = 'block';
+
+      if (mobileImg) {
+        mobileImg.style.opacity    = '0';
+        mobileImg.style.transition = 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s';
+        mobileImg.style.transform  = 'translateY(20px)';
+        setTimeout(() => {
+          mobileImg.style.opacity   = '1';
+          mobileImg.style.transform = 'translateY(0)';
+        }, 600);
+      }
+
+    } else {
+      heroVisual.style.animation = '';
+      heroVisual.style.opacity   = '';
+      heroVisual.style.transform = '';
+
+      if (phoneMockup) phoneMockup.style.display = '';
+      if (mobileImg)   mobileImg.style.display   = 'none';
+    }
+  }
+
+  handleHeroVisual();
+
   // ============ NAVBAR SCROLL ============
   const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
@@ -149,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============ SCROLL REVEAL ============
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .feat-card, .price-card, .feature-item');
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         setTimeout(() => {
           entry.target.classList.add('visible');
@@ -187,9 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = true;
       btn.textContent = 'Sending...';
 
-      const name = form.querySelector('[name="name"]').value.trim();
-      const email = form.querySelector('[name="email"]').value.trim();
-      const subject = form.querySelector('[name="subject"]').value;
+      const name    = form.querySelector('[name="name"]').value.trim();
+      const email   = form.querySelector('[name="email"]').value.trim();
       const message = form.querySelector('[name="message"]').value.trim();
 
       if (!name || !email || !message) {
@@ -204,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       await new Promise(r => setTimeout(r, 1500));
-      showMsg(msg, 'success', '✓ Message sent! We\'ll get back to you soon.');
+      showMsg(msg, 'success', "✓ Message sent! We'll get back to you soon.");
       form.reset();
       btn.disabled = false; btn.textContent = 'Send Your Message';
     });
