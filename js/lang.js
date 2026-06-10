@@ -109,7 +109,6 @@ function applyLang(lang) {
   const t = translations[lang];
   document.documentElement.lang = lang;
 
-  // Update all data-i18n elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (t[key] !== undefined) {
@@ -121,13 +120,13 @@ function applyLang(lang) {
     }
   });
 
-  // Input placeholders separately
-  if (document.querySelector('#name'))               document.querySelector('#name').placeholder = t.form_name_ph;
-  if (document.querySelector('#email'))              document.querySelector('#email').placeholder = t.form_email_ph;
-  if (document.querySelector('#message'))            document.querySelector('#message').placeholder = t.form_msg_ph;
-  if (document.querySelector('.newsletter-input'))   document.querySelector('.newsletter-input').placeholder = t.news_ph;
+  // Input placeholders
+  if (document.querySelector('#name'))             document.querySelector('#name').placeholder             = t.form_name_ph;
+  if (document.querySelector('#email'))            document.querySelector('#email').placeholder            = t.form_email_ph;
+  if (document.querySelector('#message'))          document.querySelector('#message').placeholder          = t.form_msg_ph;
+  if (document.querySelector('.newsletter-input')) document.querySelector('.newsletter-input').placeholder = t.news_ph;
 
-  // Footer copy — preserve the green <span>
+  // Footer copy — preserve green span
   const footerCopy = document.querySelector('[data-i18n="footer_copy"]');
   if (footerCopy) {
     footerCopy.innerHTML = lang === 'sv'
@@ -135,20 +134,18 @@ function applyLang(lang) {
       : '© 2018 <span>value-flow.se</span> — All Rights Reserved';
   }
 
-  // ── FIX: button shows the OPPOSITE language (what you'll switch TO) ──
-  // When page is in English  → button shows Swedish flag + "Svenska"  (next click → go Swedish)
-  // When page is in Swedish  → button shows English  flag + "English" (next click → go English)
+  // ── FIX: button shows the language to switch TO ──
+  // Page is English  → show Swedish flag  (click = go Swedish)
+  // Page is Swedish  → show English flag  (click = go English)
   const btn     = document.getElementById('lang-toggle');
   const flagImg = document.getElementById('lang-flag-img');
   if (btn) {
     if (lang === 'en') {
-      // Currently English → next click switches TO Swedish
       btn.dataset.lang = 'sv';
       if (flagImg) { flagImg.src = 'image/flag_sv.png'; flagImg.alt = 'Svenska'; }
       const lbl = btn.querySelector('.lang-label');
       if (lbl) lbl.textContent = 'Svenska';
     } else {
-      // Currently Swedish → next click switches TO English
       btn.dataset.lang = 'en';
       if (flagImg) { flagImg.src = 'image/flag_en.png'; flagImg.alt = 'English'; }
       const lbl = btn.querySelector('.lang-label');
@@ -160,14 +157,12 @@ function applyLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Read saved preference; default to English
   const saved = localStorage.getItem('lean_lang') || 'en';
   applyLang(saved);
 
   const btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', function () {
-      // data-lang always holds the language to SWITCH TO
       applyLang(this.dataset.lang);
     });
   }

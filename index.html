@@ -13,6 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -105,17 +107,13 @@
       <div class="hero-orb hero-orb-1"></div>
       <div class="hero-orb hero-orb-2"></div>
 
-      <!-- Animated hero image — no phone frame -->
       <div class="hero-img-wrap">
-        <!-- Rotating glow rings -->
         <div class="hero-ring hero-ring-1"></div>
         <div class="hero-ring hero-ring-2"></div>
         <div class="hero-ring hero-ring-3"></div>
-        <!-- Main image -->
         <div class="hero-img-card">
-          <img src="image/top picture.png">
+          <img src="image/top picture.png" draggable="false">
         </div>
-        <!-- Floating badges -->
         <div class="hero-badge hero-badge-1">
           <svg width="14" height="14" fill="var(--green)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
           Value Added
@@ -141,7 +139,7 @@
   <div class="container">
     <div class="observe-grid">
       <div class="observe-img-wrap reveal-left">
-        <img src="https://value-flow.se/images/image-12.png" alt="Observe and Capture">
+        <img src="https://value-flow.se/images/image-12.png" alt="Observe and Capture" draggable="false">
       </div>
       <div class="reveal-right">
         <span class="section-tag" data-i18n="observe_tag">Methodology</span>
@@ -187,12 +185,12 @@
           </div>
         </div>
         <div class="hero-stores" style="margin-top:1.8rem;">
-          <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank"><img src="https://value-flow.se/images/store_badges/appstore.png" alt="App Store"></a>
-          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank"><img src="https://value-flow.se/images/store_badges/googleplay.png" alt="Google Play"></a>
+          <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank"><img src="https://value-flow.se/images/store_badges/appstore.png" alt="App Store" draggable="false"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank"><img src="https://value-flow.se/images/store_badges/googleplay.png" alt="Google Play" draggable="false"></a>
         </div>
       </div>
       <div class="devices-img-wrap reveal-right">
-        <img src="https://value-flow.se/images/apple-watch.png" alt="Available on all devices">
+        <img src="https://value-flow.se/images/apple-watch.png" alt="Available on all devices" draggable="false">
       </div>
     </div>
   </div>
@@ -210,28 +208,27 @@
     </div>
   </div>
 
-  <!-- Clean carousel — no phone frame -->
   <div class="rsv-carousel-wrap">
     <div style="position:absolute;left:0;top:0;bottom:0;width:100px;background:linear-gradient(90deg,var(--dark),transparent);z-index:5;pointer-events:none;"></div>
     <div style="position:absolute;right:0;top:0;bottom:0;width:100px;background:linear-gradient(-90deg,var(--dark),transparent);z-index:5;pointer-events:none;"></div>
     <div class="rsv-screens-track">
-      <img src="https://value-flow.se/images/portfolio/screen-1.jpg" alt="Screenshot 1">
-      <img src="https://value-flow.se/images/portfolio/screen-2.jpg" alt="Screenshot 2">
-      <img src="https://value-flow.se/images/portfolio/screen-3.jpg" alt="Screenshot 3">
-      <img src="https://value-flow.se/images/portfolio/screen-4.jpg" alt="Screenshot 4">
-      <img src="https://value-flow.se/images/portfolio/screen-5.jpg" alt="Screenshot 5">
-      <img src="https://value-flow.se/images/portfolio/screen-6.jpg" alt="Screenshot 6">
-      <img src="https://value-flow.se/images/portfolio/screen-7.jpg" alt="Screenshot 7">
-      <img src="https://value-flow.se/images/portfolio/screen-8.jpg" alt="Screenshot 8">
+      <img src="https://value-flow.se/images/portfolio/screen-1.jpg" alt="Screenshot 1" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-2.jpg" alt="Screenshot 2" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-3.jpg" alt="Screenshot 3" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-4.jpg" alt="Screenshot 4" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-5.jpg" alt="Screenshot 5" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-6.jpg" alt="Screenshot 6" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-7.jpg" alt="Screenshot 7" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-8.jpg" alt="Screenshot 8" draggable="false">
       <!-- Duplicate for seamless loop -->
-      <img src="https://value-flow.se/images/portfolio/screen-1.jpg" alt="Screenshot 1">
-      <img src="https://value-flow.se/images/portfolio/screen-2.jpg" alt="Screenshot 2">
-      <img src="https://value-flow.se/images/portfolio/screen-3.jpg" alt="Screenshot 3">
-      <img src="https://value-flow.se/images/portfolio/screen-4.jpg" alt="Screenshot 4">
-      <img src="https://value-flow.se/images/portfolio/screen-5.jpg" alt="Screenshot 5">
-      <img src="https://value-flow.se/images/portfolio/screen-6.jpg" alt="Screenshot 6">
-      <img src="https://value-flow.se/images/portfolio/screen-7.jpg" alt="Screenshot 7">
-      <img src="https://value-flow.se/images/portfolio/screen-8.jpg" alt="Screenshot 8">
+      <img src="https://value-flow.se/images/portfolio/screen-1.jpg" alt="Screenshot 1" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-2.jpg" alt="Screenshot 2" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-3.jpg" alt="Screenshot 3" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-4.jpg" alt="Screenshot 4" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-5.jpg" alt="Screenshot 5" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-6.jpg" alt="Screenshot 6" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-7.jpg" alt="Screenshot 7" draggable="false">
+      <img src="https://value-flow.se/images/portfolio/screen-8.jpg" alt="Screenshot 8" draggable="false">
     </div>
   </div>
 </section>
@@ -250,8 +247,8 @@
         </a>
       </div>
       <div class="store-badges">
-        <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank"><img src="https://value-flow.se/images/store_badges/appstore.png" alt="App Store"></a>
-        <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank"><img src="https://value-flow.se/images/store_badges/googleplay.png" alt="Google Play"></a>
+        <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank"><img src="https://value-flow.se/images/store_badges/appstore.png" alt="App Store" draggable="false"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank"><img src="https://value-flow.se/images/store_badges/googleplay.png" alt="Google Play" draggable="false"></a>
       </div>
     </div>
   </div>
@@ -398,7 +395,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal-left">
-        <img src="https://value-flow.se/images/image-02.png" alt="About Value-flow">
+        <img src="https://value-flow.se/images/image-02.png" alt="About Value-flow" draggable="false">
         <div class="about-img-overlay"></div>
       </div>
       <div class="reveal-right">
@@ -488,7 +485,7 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="footer-logo"><img src="https://value-flow.se/images/logo-grey.png" alt="LEAN APP"></div>
+        <div class="footer-logo"><img src="https://value-flow.se/images/logo-grey.png" alt="LEAN APP" draggable="false"></div>
         <p class="footer-desc" data-i18n="footer_desc">Lean Apps walks through process components &amp; transforms them to efficient process.</p>
       </div>
       <ul class="footer-links-list">
@@ -504,8 +501,8 @@
     <div class="footer-bottom">
       <p class="footer-copy" data-i18n="footer_copy">&copy; 2018 <span>value-flow.se</span> — All Rights Reserved</p>
       <div style="display:flex;gap:1rem;">
-        <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank"><img src="https://value-flow.se/images/store_badges/appstore.png" alt="App Store" style="height:28px;border-radius:4px;opacity:.6;transition:opacity .3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6"></a>
-        <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank"><img src="https://value-flow.se/images/store_badges/googleplay.png" alt="Google Play" style="height:28px;border-radius:4px;opacity:.6;transition:opacity .3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6"></a>
+        <a href="https://itunes.apple.com/in/app/value-lean/id1347795759?mt=8" target="_blank"><img src="https://value-flow.se/images/store_badges/appstore.png" alt="App Store" draggable="false" style="height:28px;border-radius:4px;opacity:.6;transition:opacity .3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.leanvaluestream.app" target="_blank"><img src="https://value-flow.se/images/store_badges/googleplay.png" alt="Google Play" draggable="false" style="height:28px;border-radius:4px;opacity:.6;transition:opacity .3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6"></a>
       </div>
     </div>
   </div>

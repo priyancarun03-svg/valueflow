@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ============ PREVENT IMAGE DRAGGING ============
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', e => e.preventDefault());
+    img.setAttribute('draggable', 'false');
+  });
+
   // ============ CANVAS ANIMATED BG ============
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
@@ -139,17 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleHeroVisual() {
     const isMobile = window.innerWidth <= 900;
-
     if (!heroVisual) return;
-
     if (isMobile) {
       heroVisual.style.animation = 'none';
       heroVisual.style.opacity   = '1';
       heroVisual.style.transform = 'none';
-
       if (phoneMockup) phoneMockup.style.display = 'none';
       if (mobileImg)   mobileImg.style.display   = 'block';
-
       if (mobileImg) {
         mobileImg.style.opacity    = '0';
         mobileImg.style.transition = 'opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s';
@@ -159,17 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileImg.style.transform = 'translateY(0)';
         }, 600);
       }
-
     } else {
       heroVisual.style.animation = '';
       heroVisual.style.opacity   = '';
       heroVisual.style.transform = '';
-
       if (phoneMockup) phoneMockup.style.display = '';
       if (mobileImg)   mobileImg.style.display   = 'none';
     }
   }
-
   handleHeroVisual();
 
   // ============ NAVBAR SCROLL ============
@@ -218,42 +217,73 @@ document.addEventListener('DOMContentLoaded', () => {
     track.innerHTML += items;
   }
 
-  // ============ CONTACT FORM ============
+  // ============ CONTACT FORM — EmailJS ============
+  // ─────────────────────────────────────────────────────────────
+  //  STEP 1: Sign up free at https://www.emailjs.com
+  //  STEP 2: Create an Email Service → copy the Service ID below
+  //  STEP 3: Create an Email Template → copy the Template ID below
+  //  STEP 4: Go to Account > API Keys → copy your Public Key below
+  // ─────────────────────────────────────────────────────────────
+  const EMAILJS_PUBLIC_KEY  = '_BMrGw-7W-Qpb_lFN';   // e.g. 'AbCdEfGhIjKlMnOpQ'
+  const EMAILJS_SERVICE_ID  = 'service_w1ljoy9';   // e.g. 'service_abc123'
+  const EMAILJS_TEMPLATE_ID = 'template_2qxa7kb';  // e.g. 'template_xyz456'
+
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('.form-submit');
       const msg = form.querySelector('.form-msg');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
 
       const name    = form.querySelector('[name="name"]').value.trim();
       const email   = form.querySelector('[name="email"]').value.trim();
+      const subject = form.querySelector('[name="subject"]').value;
       const message = form.querySelector('[name="message"]').value.trim();
 
+      // Validation
       if (!name || !email || !message) {
         showMsg(msg, 'error', 'Please fill in all required fields.');
-        btn.disabled = false; btn.textContent = 'Send Your Message';
         return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         showMsg(msg, 'error', 'Please enter a valid email address.');
-        btn.disabled = false; btn.textContent = 'Send Your Message';
         return;
       }
 
-      await new Promise(r => setTimeout(r, 1500));
-      showMsg(msg, 'success', "✓ Message sent! We'll get back to you soon.");
-      form.reset();
-      btn.disabled = false; btn.textContent = 'Send Your Message';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            from_name   : name,
+            from_email  : email,
+            subject     : subject || 'General Enquiry',
+            message     : message,
+            reply_to    : email,
+            to_name     : 'Value-flow Team',
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+
+        showMsg(msg, 'success', '✓ Message sent! We\'ll get back to you soon.');
+        form.reset();
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        showMsg(msg, 'error', 'Something went wrong. Please email us at support@value-flow.se');
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Send Your Message';
     });
   }
 
   function showMsg(el, type, text) {
     el.className = 'form-msg ' + type;
     el.textContent = text;
-    setTimeout(() => { el.className = 'form-msg'; el.textContent = ''; }, 5000);
+    setTimeout(() => { el.className = 'form-msg'; el.textContent = ''; }, 6000);
   }
 
   // ============ NEWSLETTER FORM ============
